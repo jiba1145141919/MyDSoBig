@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<meta charset="UTF-8">
+    <style>
+        #jiba {
+            overflow   : hidden;
+            background : url("https://i.imgs.ovh/2026/10/16/f78ce0d56ee6411eb03e4ddf48e9f723.jpg") center / 100% auto repeat;
+            width      : 100vw;
+            min-height : 100vh;
+        }
+        body {
+            margin     : 0;
+            padding    : 0; 
+        }
+        @keyframes shake {
+            0%   { transform: translate(10px,10px)   rotate(2deg);  }
+            25%  { transform: translate(10px,-10px)  rotate(-2deg); }
+            50%  { transform: translate(-10px,10px)  rotate(2deg);  }
+            75%  { transform: translate(-10px,-10px) rotate(-2deg); }
+            100% { transform: translate(10px,-10px)  rotate(2deg);  }
+        }
+    </style>
+    <body>
+        <div id="jiba">
+            <h1>帮我</h1>
+            <h2>光遇</h2>
+            <h3>你们怎么全在外面</h3>
+            <p>大概什么时候回来</p>
+        </div>
+        <script>
+            alert("jiba!");
+            const jiba  = document.getElementById("jiba");
+            for ( var i = 0;i < 15;i ++ )
+            {
+                const hate = document.createElement('span');
+                const lesp = 20 * i + "px"
+                hate.textContent         = "HATE";
+                hate.style.fontSize      = "100px";
+                hate.style.color         = "#f00";
+                hate.style.display       = "block";
+                hate.style.textShadow    = "0 0 20px #f00";
+                hate.style.textAlign     = "center";              
+                hate.style.letterSpacing = lesp;
+                hate.style.marginRight   = "-" + lesp;
+                hate.style.animation     = "shake 0.1s infinite";
+                jiba.append(hate);
+            }
+        </script>
+    </body>
+</html>
