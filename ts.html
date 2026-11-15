@@ -83,10 +83,22 @@
             }
             #maindiv h1, #maindiv h2, #maindiv p, #maindiv span, #maindiv button:not(#switch) {
                 color                 : var(--minorcolor);
-                paint-order           : stroke fill;
+                text-shadow           : 
+                    -0.04em -0.04em var(--majorstroke),
+                     0.04em -0.04em var(--majorstroke),
+                    -0.04em  0.04em var(--majorstroke),
+                     0.04em  0.04em var(--majorstroke),
+                    -0.04em     0em var(--majorstroke),
+                        0em  0.04em var(--majorstroke),
+                     0.04em     0em var(--majorstroke),
+                        0em -0.04em var(--majorstroke);
             }
-            #maindiv h1, #maindiv h2, #maindiv p:not(nav), #maindiv span, #maindiv button:not(#switch) {
-                -webkit-text-stroke   : 0.15rem var(--majorstroke);
+            @supports ((paint-order: stroke fill) and (-webkit-text-stroke: 1px #000)) {
+                #maindiv h1, #maindiv h2, #maindiv p:not(nav), #maindiv span, #maindiv button:not(#switch) {
+                    text-shadow         : none;
+                    -webkit-text-stroke : 0.15rem var(--majorstroke);
+                    paint-order         : stroke fill;
+                }
             }
             /*哎你怎么死了？transform             : translate(var(--transX), var(--transY)) rotate(var(--roty)) rotate(var(--rota));*/
             #maindiv h1, #maindiv h2, #maindiv span {
