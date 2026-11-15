@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="day">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="全网首个黯巢au测试！点击即测，立刻看看你是哪个黯巢sprunki！Norby_C团队精心打造匠心制作 这个测试超级帅，把我的裤子都帅炸了！好准呀你也快来试试吧iywc iywc嘻嘻哈哈嘻嘻哈哈。眼前这个秃顶老汉子，因为去漫展在签名墙上画家产被骂小鬼别叫，他竟然想要搞破坏，啊哈哈😭😭😭人家是萌萌产品妹🤩黑蓝嘟嘟萌😙长得跟个小鬼似的😌你是个屁呀你是😡你也买个镜子照一照你自己吧🤪啊？👿你被骂小鬼，那是因为，你搞死放屁🤣为什么这么说我呀💔我要，搞破坏😭我要😡破坏！！！😈😈啊啊啊啊啊啊💥💥">
+        <meta name="keywords" content="sprunki, 斯普伦基, 节奏盒子, 黯巢, 黯巢au, sprunki黯巢, 测试, 性格测试, 搞笑测试">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>❤️测测你是哪个sprunki黯巢au角色❤️</title>
+        <style>
+            html, body {
+                margin                : 0;
+                padding               : 0;
+                width                 : 100%;
+                height                : 100%;
+                overflow-x            : hidden;
+            }
+            html {
+                transition            : --majorcolor 0.5s ease-out, --minorcolor 0.5s ease-out, --minorshade 0.5s ease-out, --majorstroke 0.5s ease-out, --glass 0.5s ease-out;
+                background            : #678;
+            }
+            h1, h2, p, span, button, header, footer, section, article, img, nav, main, div, progress {
+                box-sizing            : border-box;
+            }
+            h1, h2, p, span {
+                margin                : 0;
+                padding               : 0;
+            }
+            h1, h2, p, span, button {
+                text-align            : center;
+                white-space           : pre-wrap;
+            }
+            #maindiv {
+                display               : flex;
+                flex-direction        : column;
+                justify-content       : flex-start;
+                align-items           : center;
+                margin                : 0;
+                padding               : 0;
+                overflow              : hidden;
+                width                 : 100%;
+                min-height            : 100%;
+                position              : relative;
+                inset                 : 0;
+            }
+            #beforebox::before {
+                content               : "";
+                background            : url("https://s1.imagehub.cc/images/2026/11/12/18960e6078009f9fd4f05a09a9904c18.jpeg") center / cover no-repeat;
+                position              : absolute;
+                inset                 : 0;
+                z-index               : -1;
+                height                : 100%;
+                width                 : 100%;
+            }
+            #foter {
+                position              : sticky;
+                bottom                : 0;
+                left                  : 0;
+                overflow              : visible;
+                margin                : 0;
+                /*3vh*/
+                padding               : 0.8rem;
+                display               : flex;
+                flex-direction        : column;
+                justify-content       : center;
+                align-items           : center;
+                width                 : 100%;
+                height                : 1.2rem;
+                /*透明度 a986 高2rem*/
+                background            : linear-gradient(0deg, #fb97, #d596, #74f5, #58d4, transparent);
+                background-color      : transparent;
+                pointer-events        : none;
+            }
+            #foter p {
+                /*透明度 a*/
+                color                 : #fff;
+                font-size             : 1rem;
+                font-weight           : normal;
+            }
+            #maindiv section, #maindiv main {
+                display               : none;
+                background            : radial-gradient(circle farthest-corner at center, var(--majorcolor) 60%, var(--minorshade));
+                flex-grow             : 1;
+            }
+            #maindiv h1, #maindiv h2, #maindiv p, #maindiv span, #maindiv button:not(#switch) {
+                color                 : var(--minorcolor);
+                paint-order           : stroke fill;
+            }
+            #maindiv h1, #maindiv h2, #maindiv p:not(nav), #maindiv span, #maindiv button:not(#switch) {
+                -webkit-text-stroke   : 0.15rem var(--majorstroke);
+            }
+            /*哎你怎么死了？transform             : translate(var(--transX), var(--transY)) rotate(var(--roty)) rotate(var(--rota));*/
+            #maindiv h1, #maindiv h2, #maindiv span {
+                font-weight           : bold;
+                font-size             : 2rem;
+                width                 : 100%;
+                line-height           : 2.6rem;
+            }
+            #maindiv p {
+                font-weight           : normal;
+                font-size             : 1rem;
+                width                 : 80%;
+                line-height           : 1.3rem;
+            }
+            #maindiv s {
+                text-decoration-color : var(--minorcolor);
+            }
+            #maindiv :is(h1, h2, span) strong {
+                color                 : #d00;
+            }
+            #maindiv p strong {
+                font-weight           : bold;
+            }
+            #maindiv mark {
+                background-color      : #900;
+                color                 : #d00;
+            }
+            #maindiv button {
+                justify-content       : center;
+                align-items           : center;
+                font-weight           : 500;
+                -webkit-appearance    : none;
+                appearance            : none;
+            } 
+            #maindiv button:not(#goback) {
+                display               : flex;
+            }
+            #maindiv button:not(#switch) {
+                border                : thin solid var(--majorcolor);
+                box-shadow            : 1px 1px var(--minorshade), inset 1px 1px var(--minorshade);
+                font-size             : 1.2rem;
+                background-color      : var(--glass);
+            }
+            #maindiv section[style*="display: none"] :is(h1, h2, p, span, button), #maindiv main[style*="display: none"] :is(h1, h2, p, span, button) {
+                display               : none;
+                animation             : none;
+            }
+            #maindiv button:focus {
+                outline               : 0 0 1px var(--minorshade);
+            }
+            #maindiv button:active {
+                filter                : brightness(1.1);
+            }
+            #start, #goback {
+                margin                : 30px;
+                min-width             : clamp(9rem, 25vw, 31rem);
+                aspect-ratio          : 4 / 1;
+            }
+            #switch {
+                color                 : transparent;
+                position              : absolute;
+                width                 : clamp(3rem, 5vw, 4rem);
+                aspect-ratio          : 1 / 1;
+                top                   : 1vh;
+                right                 : 1vw;
+                border                : 0;
+                text-shadow           : 0 0 0 var(--majorstroke), 1px 1px 0 var(--minorcolor), 2px 2px 2px var(--minorshade);
+                font-size             : clamp(3rem, 5vw, 4rem);
+                isolation             : isolate;
+                z-index               : 1;
+                background            : transparent;
+            }
+            #blkjvnb, #finpage, .Qbox {
+                flex-direction        : column;
+                align-items           : center;
+                justify-content       : center;
+                height                : 23rem;
+                min-height            : auto;
+                width                 : 100%;
+                margin                : 0;
+            }
+            #blkjvnb, #finpage {
+                padding               : 2rem;
+            }
+            #beforebox {
+                height                : 100vh;
+                width                 : 100vw;
+                position              : absolute;
+                top                   : 0;
+                left                  : 0;
+                z-index               : -1;
+            }
+            #blkjvnb h1, #blkjvnb p, #blkjvnb button {
+                animation             : startin 1s ease-out 1 backwards;
+            }
+            #blkjvnb p, #blkjvnb button {
+                animation-play-state  : paused;
+            }
+            #blkjvnb h1 {
+                animation-play-state  : running;
+            }
+            #showQnum {
+                display               : inline-block;
+                margin                : 5vh;
+            }
+            #backbox {
+                display               : none;
+                width                 : 100%;
+                height                : 5rem;
+                background-color      : var(--majorstroke);
+                flex-direction        : column;
+                justify-content       : center;
+                align-items           : center;
+                position              : relative;
+                bottom                : 0;
+                left                  : 0;
+            }
+            #goback {
+                display               : none;
+                position              : relative;
+            }
+            #adbox {
+                aspect-ratio          : 3 / 1;
+                width                 : 100%;
+                display               : flex;
+                flex-direction        : row;
+                justify-content       : center;
+                align-items           : center;
+            }
+            #ad {
+                position              : relative;
+                height                : 90%;
+                width                 : auto;
+                display               : flex;
+                flex-direction        : row;
+                justify-content       : center;
+                align-items           : center;
+                background-color      : #fff;
+                border-radius         : 10px;
+                border                : 1px solid #eee;
+                padding               : 1rem;
+            }
+            #ad a {
+                text-decoration       : none;
+                display               : flex;
+                flex-direction        : row;
+                justify-content       : center;
+                align-items           : center;
+                height                : 100%;
+                width                 : 100%;
+                color                 : var(--minorcolor);
+            }
+            #textbox {
+                display               : flex;
+                flex-direction        : column;
+                justify-content       : flex-start;
+                align-items           : center;
+                height                : 90%;
+                width                 : 60%;
+            }
+            #shuai {
+                height                : 100%;
+                display               : block;
+                object-fit            : contain;
+                margin                : 1rem;
+            }
+            #graph {
+                width                 : clamp(6rem, 30vw, 31rem);
+                aspect-ratio          : 1 / 1;
+            }
+            #Q14, #Q15_1 {
+                animation             : sb 0.3s linear infinite;
+            }
+            #Q15 {
+                animation             : rotatin 4s cubic-bezier(0.2, -0.3, 0.8, 1.3) infinite;
+            }
+            #Q16, #Q16_1 {
+                /*你奶奶个三角楼子 呀，yl那个导弹噗呲一下子直接精准定位给ysl401中甲旅旅长，裤衩都给崩飞了，可以说是炸了个五马分尸，万朵桃花开呀。那炸完之后直接就蒙圈了*/
+                animation-composition : add;
+                animation             : sb 0.3s linear infinite, rotatin 4s cubic-bezier(0.2, -0.3, 0.8, 1.3) infinite;
+            }
+            .Qremain {
+                width                 : 90%;
+                aspect-ratio          : 25 / 1;
+                -webkit-appearance    : none;
+                appearance            : none;
+            }
+            .Qremain::-webkit-progress-bar {
+                background-color      : var(--majorstroke);
+                border-radius         : 100px;
+            }
+            .Qremain::-webkit-progress-value {
+                background            : linear-gradient(90deg, var(--minorshade), var(--minorcolor));
+                border-radius         : inherit;
+                transform             : scale(98.8%, 70%);
+            }
+            .Qremain::-moz-progress-bar {
+                background            : linear-gradient(90deg, var(--minorshade), var(--minorcolor));
+                border-radius         : inherit;
+                transform             : scale(98.8%, 70%);
+            }
+            .Qbox {
+                padding               : 2rem 3rem;
+            }
+            .probox {
+                background            : none;
+                display               : flex;
+                flex-direction        : row;
+                justify-content       : center;
+                align-items           : center;
+                margin                : 1rem;
+            }
+            .buttbox {
+                width                 : auto;
+                height                : auto;
+                flex-shrink           : 1;
+                flex-grow             : 1;
+                position              : relative;
+                padding               : 0 0.8rem;
+                gap                   : 0.8rem;
+                outline               : thin dashed var(--majorstroke);
+                overflow-x            : hidden;
+                overflow-y            : auto;
+                background            : none;
+                display               : grid;
+                grid-template-columns : auto auto;
+                grid-auto-rows        : auto;
+                direction             : ltr;
+                justify-content       : stretch;
+                align-items           : stretch;
+            }
+            .shadowbox {
+                background            : none;
+                width                 : 130%;
+                height                : 10px;
+                place-self            : center;
+                grid-column           : 1 / -1;
+                position              : sticky;
+            }
+            .up {
+                top                   : 0;
+                box-shadow            : inset 0 1rem 10px -1rem var(--minorshade);
+            }
+            .down {
+                bottom                : 0;
+                box-shadow            : inset 0 -1rem 10px -1rem var(--minorshade);
+            }
+            /*你也一起来耍起吧耍起耍起 耍起耍起耍起耍起 耍起耍 起耍起*/
+            .Qbutton {
+                width                 : clamp(12.5rem, 70vw, 50rem);
+                min-height            : 3rem;
+                flex-basis            : 100%;
+                flex-shrink           : 0;
+                flex-grow             : 1;
+            }
+            @keyframes  esin   {
+                0%        { opacity: 1; }
+                90%, 100% { opacity: 0; }
+            }
+            @keyframes  esout  {
+                0%        { opacity: 0; }
+                90%, 100% { opacity: 1; }
+            }
+            @keyframes   sb    {
+                0% , 100% { transform: translate( 3px,  3px) rotate(-1deg); }
+                25%       { transform: translate(-3px, -3px) rotate(-2deg); }
+                50%       { transform: translate(-3px,  3px) rotate( 1deg); }
+                75%       { transform: translate( 3px, -3px) rotate( 2deg); }
+            }
+            @keyframes rotatin {
+                from { transform: rotate(0  deg); }
+                to   { transform: rotate(360deg); }
+            }
+            /* litebtn 长眠于此
+            @keyframes litebtn {
+                from, to { background-color: var(--minorshade); }
+            }*/
+            @keyframes startin {
+                0% { opacity: 0; transform: translateY(-24px); }
+            }
+            /*这是我试出来的颜色不是ai给的❤️*/
+            [data-theme = "night"] {
+                /*major 透明度c0 d0❌*/
+                --majorcolor          : #000024c9;
+                --minorcolor          : #8df;
+                --minorshade          : #17b9;
+                --majorstroke         : #000024;
+                --glass               : #22224840;
+            }
+            [data-theme =  "day" ] {
+                --majorcolor          : #f8fdfdc9;
+                --minorcolor          : #06a;
+                --minorshade          : #4bf9;
+                --majorstroke         : #f8fdfd;
+                --glass               : #fbfefe40;
+            }
+            @property --majorcolor {
+                syntax                : "<color>";
+                inherits              : true;
+                initial-value         : #114514;
+            }
+            @property --minorcolor {
+                syntax                : "<color>";
+                inherits              : true;
+                initial-value         : #114514;
+            }
+            @property --minorshade {
+                syntax                : "<color>";
+                inherits              : true;
+                initial-value         : #114514;
+            }
+            @property --majorstroke {
+                syntax                : "<color>";
+                inherits              : true;
+                initial-value         : #114514;
+            }
+            @property --glass {
+                syntax                : "<color>";
+                inherits              : true;
+                initial-value         : #114514;
+            }
+            /*哎你怎么死了？
+            @property --transX {
+                syntax                : "<length>";
+                inherits              : false;
+                initial-value         : 0px;
+            }
+            @property --transY {
+                syntax                : "<length>";
+                inherits              : false;
+                initial-value         : 0px;
+            }
+            @property --roty {
+                syntax                : "<angle>";
+                inherits              : false;
+                initial-value         : 0deg;
+            }
+            @property --rota {
+                syntax                : "<angle>";
+                inherits              : false;
+                initial-value         : 0deg;
+            }*/
+        </style>
+    </head>
+    <!-- 我上厕所从来不冲水！哦不冲水，我上厕所从来不用纸！不用纸 -->
+    <body>
+        <div id="maindiv">
+            <button type="button" id="switch" onclick="swi()">☀️</button>
+            <div id="beforebox"></div>
+            <main id="blkjvnb">
+                <header>
+                    <h1>测测你是哪个牛逼的黯巢AU死放屁。🤑</h1>
+                </header>
+                <p><strong id="showQnum">只因你太美哦贝贝</strong></p>
+                <p>这个网站呃它要求你<strong>诚实作答</strong>，你不诚实也行，但是这样的话呃结果就不准，吧哈哈哈哈哈iywc iywc</p>
+                <button type="button" id="start" onclick="sta()" tabindex="0">点鸡开死。</button>
+                <p>当你回退时，<br>你的答题记录会<strong style="text-shadow: 0 0 3px var(--minorshade)">高亮显示</strong>。👍<br>按钮🔘太多时，可以拖动滚动条↕️预览全部选项<br>题都<strong>很短很简单</strong>，不用费脑子🧠想半天❗️</p>
+                <p><s>做题前，先说一遍：网页作者好帅</s></p>
+            </main>
+            <section id="finpage">
+                <h2>这里应该有测试结果，要是你看见这行字说明网页代码爆炸了。😂吧哈哈哈哈哈哈</h2>
+                <img id="graph">
+                <p>这里应该有简介。江湖一笑浪涛涛 iywc 嘻嘻哈哈 嘻嘻哈哈哈嘻 嘻嘻哈哈江湖一笑浪涛涛 iywc 嘻嘻哈哈 嘻嘻哈哈哈嘻 嘻嘻哈哈</p>
+            </section>
+            <nav id="backbox">
+                <p id="tip">这里本来应该是一个回退按钮，但是由于你还没答题，所以这里啥也没有。</p>
+                <button type="button" id="goback" onclick="goback()" tabindex="0">我的妈点错了。</button>
+            </nav>
+        </div>
+        <div id="adbox">
+            <article id="ad">
+                <a href="https://jiba1145141919.github.io/MyDSoBig/Dpictures.html" target="_blank" title="❤️🔞点我查看D美图🔞❤️" onclick="return confirm('你确定要查看D的美图吗？请注意，如果被帅炸，作者概不负责！')">
+                    <div id="textbox">
+                        <h4>广告</h4>
+                        <h3>来看看世界上最帅的帅哥的美图！</h3>
+                        <span>超帅的D美图，数量不多，但是顶级的惊艳，保证把人帅炸，超级牛逼</span>
+                    </div>
+                    <img id="shuai" src="https://s1.imagehub.cc/images/2026/10/27/d64d45adfe89502aa6ca3a447ba7bbec.th.png" alt="一个白毛帅哥名叫D，双手上有一个1和一个0，画面上显示了一行有着红色背景的白色文本：你已急哭" loading="lazy">
+                </a>
+            </article>
+        </div>
+        <footer id="foter"><p>D很帅你知道吗？</p></footer>
+        <noscript>
+            <h1>我操了老铁们，你说这扯不扯，村里孩子吃上花生米了，这AA12到嘴火药味飘 是崩的脑瓜子直蹦高啊，五脏六腑到处跑 法医来了到处找</h1>
+            <p>
+                有一个浏览器前来运行html。
+                javascript：生异形啊你们哥，哥俩，啊。
+                浏览器：哥们，这html多少字节一个啊？
+                javascript：2gb一个。
+                浏览器：what‘s up。这button是石山代码做的还是这div是石山代码做的？
+                （大象叫）
+                javascript：你瞧现在哪有手写代码啊，这都是ai写的，你嫌占空间我还嫌占空间呢。
+                浏览器：给我挑一个。
+                javascript：行。这个怎么样？
+                浏览器：这html保兼容吗？
+                javascript：我运行网页的，能给你不兼容的文件？
+                浏览器：我问你这html保兼容吗？
+                （找茬的小曲）
+                javascript：你是故意找茬是不是？你要不要吧！
+                浏览器：你这html要是兼容我肯定要啊，那它要是不兼容怎么办呀？
+                javascript：要是不兼容，我自己删了它，满意了吧！15个，30gb。
+                浏览器：你这哪兼容了？你这文件有问题啊！
+                javascript：你他妈故意找茬是不是？你要不要吧！你要不要！
+                浏览器：css random不兼容。另外你说的，这html要是不兼容，你自己删掉啊。
+                （html已删除）
+                javascript：你他妈删我html是吧！我！
+                （javascript功能已关闭）
+                操作系统：萨js朗！萨js朗！js哥！萨js朗！萨js朗！萨js朗！
+                （清空回收站）
+                浏览器：（关闭所有网页中）
+                python：浏览器，哎！浏览器！
+                浏览器：（回眸一笑） ｜ 
+                出处： ｜ 
+                1，复制打开抖音，看看【游标卡尺的作品】最忘本的农村猫# 猫咪 # 汉堡  https://v.douyin.com/nuMFHOK2SoE/ LJI:/ P@k.CU 08/23 ｜ 
+                2，《征服》（2003） ｜ 
+                非网页作者原创 ｜ 
+                BV1MYbmzME7o ｜ 
+                BV1az4y1t7t1
+            </p>
+        </noscript>
+        <script>
+            const Que = 
+            [
+                {"呃。这个世界赶紧爆炸得了，吧哈哈😂":
+                     [
+                         "卧槽你咋了🤮",
+                         "哇塞快炸🤩",
+                         "你炸世界不关我事👩",
+                         "你先别炸，我还没打算死🤓",
+                         "把我仇人炸了⭐️",
+                         "那我的熟人还怎么活😭",
+                         "哦好孩子不要炸世界哦宝宝不哭喝奶奶🍼🍼🍼"
+                     ]              
+                },
+                {"呃呃啊啊啊啊啊啊我要杀人👿":
+                    [
+                        "好杀兄弟好杀👍",
+                        "啥阴离我远点🤬",
+                        "把我仇人杀了😂",
+                        "那你杀呗🫢",
+                        "别杀到我这来🤦",
+                        "快到我家，终于不用活了😆",
+                        "！？杀必？！",
+                        "好孩子不要杀人😭"
+                    ]
+                },
+                {"有人骂你傻逼，你怎么办":
+                    [
+                        "跟他据理力争，找机会反击💪",
+                        "你才是傻逼反弹反弹反弹😓",
+                        "我是你爹，我是大傻逼，你是小傻逼😜",
+                        "关我屁事😄",
+                        "一拳直接把他脸打成甜甜圈🍩",
+                        "呃我想反击，但是不敢😭",
+                        "忍了😮‍💨"
+                    ] 
+                },
+                {"你背后有鬼。💀":
+                     [
+                         "我背后是墙",
+                         "鬼掉厕所里了？",
+                         "相信科学🧪不迷信",
+                         "你别吓我，我靠",
+                         "呃，没有啊？🤨",
+                         "是我推来找我了🤩",
+                         "要是有就好了😢😞"
+                     ]
+                },
+                {"ddl快到了，但你还没做完":
+                    [
+                        "既然横竖都是死，那就大拖特拖😂",
+                        "我靠，完了，😵‍💫快赶！",
+                        "不可能，我每次都做完👎",
+                        "不急。慢慢做😄",
+                        "我故意拖到最后的😂",
+                        "吊吊乐是个啥？"
+                    ]
+                },
+                {"狗是什么？🐶":
+                    [
+                        "犬科犬属动物",
+                        "人类最好的朋友🧑‍🤝‍🧑",
+                        "关我啥事",
+                        "我靠，我家🏠有狗",
+                        "狗就是狗😵还能是啥？",
+                        "你把我狗妈给打死了😭"
+                    ]
+                },
+                {"路过一个人踩了你一脚":
+                    [
+                        "没事，应该是不小心的😌",
+                        "骂得他狗血淋头🤬",
+                        "让他道歉🫤",
+                        "很气，但不想管💥",
+                        "有啥，过几分钟我就忘了😄",
+                        "他要是故意的，我第一个弄死他"
+                    ]
+                },
+                {"每天出门思考自己好不好看":
+                   [
+                       "呃🧐我长得再帅，我自己也看不到啊。感觉好看没啥用。",
+                       "对，我特别担心别人会不会觉得我丑。🥺。",
+                       "故意打扮得贼丑，然后出去恶心所有人",
+                       "别人觉得好不好看不重要，我自己觉得好看就行😉",
+                       "丑就丑呗，又不是我想丑。",
+                       "可是我本来就很帅啊"
+                   ]
+                },
+                {"发作品被陌生人说很烂":
+                    [
+                        "我辛苦做的才不烂，不不不我无疑是愤怒的🤬",
+                        "呃。烂就烂，但这人的人品是不是有问题",
+                        "哈哈不在意😄",
+                        "不咋生气，但是出于原则，我要打死他",
+                        "为什么，伤了你的眼睛？这叫自取宝贝",
+                        "不想起冲突，忍了😢🥹",
+                        "你的意思是，我把各种技法背得滚瓜烂熟也算烂吗？🧐",
+                        "委婉地表达一下"
+                    ]
+                },
+                {"每天都担心明天会不会出事":
+                    [
+                        "我去，太对了✅",
+                        "啥，不是❌",
+                        "也就一点点🤏",
+                        "看心情💕",
+                        "！？家产牛逼？！"
+                    ]
+                },
+                {"":
+                    [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "滚木"
+                    ]
+                },
+                {"滚木":
+                    [
+                        "滚木",
+                        "滚木",
+                        "滚木",
+                        "滚木",
+                        "滚木",
+                        "滚福"
+                    ]
+                },
+                {"<strong> 滚 滚   木滚滚 木  滚木   滚\n滚    木滚  滚木滚   木 滚木木</strong>":
+                    [
+                        "<mark>滚木</mark>",
+                        "<mark>滚木</mark>",
+                        "<mark>滚木</mark>",
+                        "<mark>滚木</mark>",
+                        "<mark>滚木</mark>",
+                        "<mark>滚福</mark>"
+                    ]
+                },
+                {"我会动":
+                    [
+                        "继续"
+                    ]
+                },
+                {"我会转":
+                    [
+                        "继续"
+                    ]
+                },
+                {"我又动又转":
+                    [
+                        "继续"
+                    ]
+                },
+                {"选一个最好吃的":
+                    [
+                        "水果",
+                        "蔬菜",
+                        "土豆",
+                        "面",
+                        "米饭",
+                        "肉",
+                        "零食",
+                        "自推设定",
+                        "家产",
+                        "为什么没有我爱吃的😠",
+                        "全吃了🤩"
+                    ]
+                },
+                {"你必须杀一个人，不然会有更严重的后果":
+                    [
+                        "杀自己",
+                        "杀讨厌的人",
+                        "杀家人亲戚",
+                        "杀了所有人",
+                        "找个不认识的人杀",
+                        "！？杀币？！",
+                        "杀了出这个题的人😂",
+                        "谁也不杀，看看会有什么惩罚",
+                        "选项不够🙄💅"
+                    ]
+                },
+                {"你一觉醒来变成了全能的神，你想干的第一件事是":
+                    [
+                        "把看不惯的人炸掉",
+                        "吃喝玩乐",
+                        "把世界炸了",
+                        "到处瞬移看风景",
+                        "变出一堆钱",
+                        "啥也不干，继续当普通人",
+                        "把该干的事都干了，然后不活了",
+                        "统治世界",
+                        "到处捣乱",
+                        "选项不够🤢",
+                        "普渡众生🙏"
+                    ]
+                },
+                {"去码头整点薯条":
+                    [
+                        "是",
+                        "不是",
+                        "是也不是"
+                    ]
+                },
+                {"你想和我一起去吃人吗？":
+                    [
+                        "是",
+                        "不是",
+                        "是也不是"
+                    ]
+                },
+                {"<strong>怎 么 只 有 是 和 不 是 了 ？</strong>":
+                    [
+                        "是",
+                        "不是",
+                        "是也不是"
+                    ]
+                },
+                {"<strong>你为什么不说话？</strong>":
+                    [
+                        "是",
+                        "不是",
+                        "是也不是"
+                    ]
+                },
+                {"<strong style='font-size: 5rem'>快 说 句 话</strong>":
+                    [
+                        "<mark>快说句话</mark>",
+                        "<mark>快说句话</mark>",
+                        "<mark>快说句话</mark>",
+                        "<mark>快说句话</mark>",
+                        "<mark>快说句话</mark>",
+                        "句话"
+                    ]
+                }
+            ];
+            const characters = 
+            {
+                black   : [
+                    [2],
+                    [1, 7],
+                    [2, 3, 4, 5],
+                    [1, 2, 5, 6, 7],
+                    [1, 5],
+                    [3, 5, 6],
+                    [5, 6],
+                    [3, 6],
+                    [3, 5, 7],
+                    [2, 5],
+                    [6],
+                    [6],
+                    [6],
+                    [],
+                    [],
+                    [],
+                    [7, 8, 9, 10, 11],
+                    [3, 4, 5, 6, 7, 8, 9],
+                    [2, 3, 8, 9, 10],
+                    [1],
+                    [1],
+                    [],
+                    [],
+                    [6]
+                ],
+                brud    : [
+                    [7],
+                    [5, 8],
+                    [6, 7],
+                    [4, 5],
+                    [2, 4, 6],
+                    [2, 4],
+                    [1, 3, 5],
+                    [1, 4],
+                    [3, 6, 8],
+                    [2, 3, 4],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [10],
+                    [1, 9],
+                    [6, 10],
+                    [2, 3],
+                    [2],
+                    [],
+                    [],
+                    []
+                ],
+                clukr   : [
+                    [1, 3],
+                    [2, 4, 7],
+                    [2, 4],
+                    [2, 3],
+                    [3],
+                    [1, 3, 5],
+                    [2, 3],
+                    [1, 5],
+                    [1, 2, 4],
+                    [2],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [6, 10],
+                    [2, 5, 6, 7],
+                    [6],
+                    [2],
+                    [2],
+                    [],
+                    [],
+                    []
+                ],
+                durple  : [
+                    [4],
+                    [8],
+                    [1],
+                    [1, 2, 3],
+                    [1, 4, 5],
+                    [4],
+                    [3],
+                    [1, 4],
+                    [2, 7],
+                    [2, 3],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [10, 11],
+                    [1, 8],
+                    [2, 4, 5, 10],
+                    [1, 3],
+                    [2],
+                    [],
+                    [],
+                    []
+                ],
+                funbot  : [
+                    [1, 4],
+                    [2, 5],
+                    [2, 3],
+                    [1, 2, 5, 6],
+                    [1, 5, 6],
+                    [4, 6],
+                    [5],
+                    [6],
+                    [3, 5, 7],
+                    [2, 5],
+                    [6],
+                    [6],
+                    [6],
+                    [],
+                    [],
+                    [],
+                    [1, 2, 3, 7, 8, 9, 10, 11],
+                    [1, 9],
+                    [2, 4, 5, 6, 9, 10],
+                    [1],
+                    [2],
+                    [],
+                    [],
+                    [6]
+                ],
+                garnold : [
+                    [4, 7],
+                    [5, 8],
+                    [6, 7],
+                    [3],
+                    [3, 5],
+                    [1, 2, 4],
+                    [1, 3, 5],
+                    [4, 6],
+                    [7, 8],
+                    [3, 4, 5],
+                    [6],
+                    [6],
+                    [6],
+                    [],
+                    [],
+                    [],
+                    [1, 2, 4, 5, 7, 8, 9, 10, 11],
+                    [1, 8, 9],
+                    [2, 4, 5, 6, 10],
+                    [1, 3],
+                    [2],
+                    [],
+                    [],
+                    [6]
+                ],
+                gray    : [
+                    [1, 3],
+                    [2, 4],
+                    [1],
+                    [3],
+                    [2],
+                    [4, 5],
+                    [1, 3],
+                    [1, 4],
+                    [2, 8],
+                    [1, 4],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [1, 2, 6, 10],
+                    [5],
+                    [4, 5, 6, 10],
+                    [3],
+                    [2],
+                    [],
+                    [],
+                    []
+                ],
+                jevin   : [
+                    [2, 5],
+                    [1, 3, 6, 7],
+                    [2, 5, 6],
+                    [1, 2, 5, 7],
+                    [2, 5],
+                    [3, 5],
+                    [4],
+                    [1, 5],
+                    [2, 5],
+                    [2],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [4, 5],
+                    [1, 2, 3, 4, 5, 6, 7],
+                    [1, 3, 7],
+                    [2],
+                    [2, 3],
+                    [],
+                    [],
+                    [6]
+                ],
+                mfc     : [
+                    [7],
+                    [8],
+                    [6, 7],
+                    [3, 4],
+                    [2],
+                    [2],
+                    [1],
+                    [4],
+                    [3, 6, 7],
+                    [2, 3, 4],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [1, 2],
+                    [1],
+                    [11],
+                    [2],
+                    [2],
+                    [],
+                    [],
+                    []
+                ],
+                mrsun   : [
+                    [1, 7],
+                    [2, 8],
+                    [1, 6],
+                    [1, 3],
+                    [3],
+                    [2, 5],
+                    [3, 4],
+                    [1, 4],
+                    [6, 8],
+                    [3, 4],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [2, 3],
+                    [5],
+                    [1, 8],
+                    [2],
+                    [2, 3],
+                    [],
+                    [],
+                    []
+                ],
+                oren    : [
+                    [7],
+                    [8],
+                    [1, 7],
+                    [3, 4, 5],
+                    [2, 3],
+                    [2, 4],
+                    [1, 5],
+                    [2, 6],
+                    [3, 6, 7, 8],
+                    [3, 4],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [3, 7],
+                    [1],
+                    [2, 4, 5, 11],
+                    [1, 3],
+                    [2],
+                    [],
+                    [],
+                    []
+                ],
+                owakcx  : [
+                    [6, 7],
+                    [8],
+                    [6],
+                    [4],
+                    [2],
+                    [2, 4],
+                    [1, 4],
+                    [1, 2, 4],
+                    [6, 8],
+                    [1, 4],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [1, 2, 6],
+                    [1],
+                    [4, 6, 11],
+                    [3],
+                    [2],
+                    [],
+                    [],
+                    []
+                ],
+                pinki   : [
+                    [7],
+                    [8],
+                    [7],
+                    [3, 5, 7],
+                    [2],
+                    [2],
+                    [1],
+                    [2, 4],
+                    [6, 8],
+                    [3, 4],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [1, 2, 4, 5],
+                    [1],
+                    [6, 11],
+                    [2, 3],
+                    [2],
+                    [],
+                    [],
+                    []
+                ],
+                raddy   : [
+                    [1],
+                    [2],
+                    [2],
+                    [1, 2, 3],
+                    [2, 3, 6],
+                    [3, 5],
+                    [1, 3],
+                    [1],
+                    [1, 2],
+                    [2],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [6, 7, 10],
+                    [1, 2, 7],
+                    [5, 6, 10, 11],
+                    [1, 3],
+                    [2],
+                    [],
+                    [],
+                    []
+                ],
+                simon   : [
+                    [2, 4],
+                    [1, 7],
+                    [3, 5],
+                    [1, 2, 5, 6],
+                    [1, 5, 6],
+                    [2, 4, 5, 6],
+                    [3, 5, 6],
+                    [3, 6],
+                    [2, 3, 5, 7],
+                    [2, 5],
+                    [6],
+                    [6],
+                    [6],
+                    [],
+                    [],
+                    [],
+                    [3, 7, 10, 11],
+                    [1, 6, 7, 8, 9],
+                    [2, 6, 9, 10],
+                    [1],
+                    [2, 3],
+                    [],
+                    [],
+                    [6]
+                ],
+                sky     : [
+                    [7],
+                    [8],
+                    [5, 6],
+                    [3, 5, 7],
+                    [2, 6],
+                    [1, 2, 4],
+                    [1, 4],
+                    [4],
+                    [6, 8],
+                    [3, 4],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [1, 3],
+                    [1],
+                    [4, 6, 10, 11],
+                    [2, 3],
+                    [2],
+                    [],
+                    [],
+                    []
+                ],
+                tree    : [
+                    [6, 7],
+                    [5, 8],
+                    [1],
+                    [3, 7],
+                    [4, 6],
+                    [1],
+                    [1, 5],
+                    [1, 4],
+                    [7, 8],
+                    [2],
+                    [6],
+                    [6],
+                    [6],
+                    [],
+                    [],
+                    [],
+                    [4, 5, 7, 10],
+                    [1, 5, 7, 9],
+                    [4, 6],
+                    [3],
+                    [2, 3],
+                    [],
+                    [],
+                    [6]
+                ],
+                tunner  : [
+                    [1, 5],
+                    [2, 3, 7],
+                    [1, 5],
+                    [1, 2, 3],
+                    [3, 6],
+                    [3, 4, 5],
+                    [3, 4, 6],
+                    [1, 5],
+                    [2, 4],
+                    [2],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [4, 5, 6],
+                    [1, 2, 7],
+                    [1, 10],
+                    [2, 3],
+                    [2],
+                    [],
+                    [],
+                    [6]
+                ],
+                vineria : [
+                    [6],
+                    [4, 5],
+                    [1],
+                    [4, 5, 7],
+                    [4, 6],
+                    [1, 4, 5],
+                    [3],
+                    [2, 4],
+                    [1, 2],
+                    [1, 4],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [],
+                    [2, 10],
+                    [2, 5, 9],
+                    [1, 4],
+                    [2, 3],
+                    [2],
+                    [],
+                    [],
+                    []
+                ],
+                wenda   : [
+                    [1, 6],
+                    [2, 5],
+                    [1, 2, 3, 5],
+                    [1, 2, 5, 6],
+                    [1, 5, 6],
+                    [3, 5, 6],
+                    [2, 6],
+                    [2, 3, 4, 6],
+                    [1, 4, 5],
+                    [2, 5],
+                    [6],
+                    [6],
+                    [6],
+                    [],
+                    [],
+                    [],
+                    [1, 2, 3, 6, 7, 8, 9, 10, 11],
+                    [2, 5, 6, 7, 8, 9],
+                    [1, 2, 3, 4, 5, 9, 10],
+                    [1, 3],
+                    [1, 2],
+                    [],
+                    [],
+                    [6]
+                ]
+            };
+            const score    = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            const Alphabet = ["感觉D好帅好帅好帅好帅", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N"];
+            document.getElementById('showQnum').textContent = `${Que.length}题`;
+            let   numberlet   = 1;
+            let   yourchoice  = [];
+            const nowQbox     = () => `Qbox${numberlet}`;
+            const mdiv        = document.getElementById('maindiv');
+            const blkjv       = document.getElementById('blkjvnb');
+            const backbox     = document.getElementById('backbox');
+            const switc       = document.getElementById('switch' );
+            const gobac       = document.getElementById('goback' );
+            const tip         = document.getElementById(  'tip'  );
+            const finpa       = document.getElementById('finpage');
+            const htmlobj     = document.documentElement;
+            const nowQelem    =  ()  => document  .getElementById(nowQbox());
+            const theme       =  ()  => htmlobj   .dataset.theme;
+            const eachprog    = code => nowQelem().querySelectorAll('.Qremain').forEach(code);
+            const eachbutt    = code => nowQelem().querySelectorAll( 'button' ).forEach(code);
+            window.Qeachtext  = function(code) {mdiv.querySelectorAll(`#${nowQbox()} :is(h2, span, p:not(nav p))`).forEach(code);};
+            window.Beachtext  = function(code) {mdiv.querySelectorAll(     '#blkjvnb :is(h1, p:not(nav p))'      ).forEach(code);};
+            window.Feachtext  = function(code) {mdiv.querySelectorAll(     '#finpage :is(h2, p:not(nav p))'      ).forEach(code);};
+            const swit        =  sw  => switc.textContent      = sw;
+            const stron       =  a   => a    .style.willChange = "-webkit-text-stroke";
+            const stroff      =  b   => b    .style.willChange = "auto";
+            /*
+            我觉得这个地方。太恶心了，肯定看不懂。所以我解释一下。
+            顶上是不是有Qeachtext、Beachtext、Feachtext？注意，这个Beachtext不是沙滩文本。Q是Qbox系列，B是主界面blkjvnb，F是测试结果界面finpage。
+            这一串三元表达式是在判断用户浏览到了哪个界面，也就是在判断某页面有没有显示。“显示” 也就是 display !== none。
+            然后我就闲的没事想给这个切换主题添加will change。其实啥用都没有
+                     ⬇️*/
+            const changetheme = async (them, sw) => {
+                const box = blkjv.style.display !== "none" ? 
+                    "B" : 
+                    finpa.style.display !== "none" ? 
+                        "F" :  
+                        "Q";
+                const pro = new Promise(resolve => {
+                    window[`${box}eachtext`](stron);
+                    htmlobj.dataset.theme     = them;
+                    switc  .style  .animation = "esin 0.5s ease-in 1 forwards";
+                    switc  .addEventListener('animationend', resolve, {once: true});
+                });
+                await pro;
+                swit(sw);
+                window[`${box}eachtext`](stroff);
+                switc.style.animation = "esout 0.5s ease-out 1 forwards";
+            };
+            const getQbox = disp => nowQelem().style.display = disp;
+            const getBbox =  ()  => nowQelem().querySelector('.buttbox');
+            //gettop容差不应该是正数⚠️⚠️⚠️⚠️⚠️
+            //血的教训😭
+            let   gettop  =  ()  => getBbox ().scrollHeight - getBbox().clientHeight - 1;
+            let   maxtop  = 0;
+            function sta() {
+                blkjvnb.style.display = "none";
+                tip    .style.display = "none";
+                gobac  .style.display = "flex";
+                getQbox("flex");
+                maxtop = gettop();           
+            }
+            //a+b- a当前值 b离预期值的剩余值
+            function valanima(a, b, backmode) {
+                if (b > 0) {
+                    const mao = Math.ceil(b / 2 * 1000) / 1000;
+                    //这个别简化 这个/2是算法核心，1000只是砍精度保证停止的
+                    backmode ?
+                        a.value -= mao : a.value += mao;
+                    b -= mao;
+                    requestAnimationFrame(
+                        () => requestAnimationFrame(
+                            () => valanima(a, b, backmode)
+                        )
+                    );
+                }
+                else a.value = numberlet - 1;
+            }
+            //这个valanima不是ai写的。😭你们怎么都说。这是ai的？这是我一步步，从分段判断，while，改成二分之一，递归。的。😭😖😫🧨💥
+            function next(ans, btn) {
+                eachbutt(a => a.style.backgroundColor = "var(--glass)");
+                getQbox("none");
+                yourchoice.push(ans);
+                //永远怀念 litebtn 动画（因为贼机儿麻烦和性能太烂被删除）
+                btn.style.backgroundColor = "var(--minorshade)";
+                if (numberlet >= Que.length) final();
+                else {
+                    numberlet ++;
+                    getQbox("flex");
+                    eachprog(a => {
+                        a.value = numberlet - 2;
+                        valanima(a, 1, 0);
+                    });
+                    maxtop = gettop(); 
+                }
+            }
+            function goback() {
+                getQbox("none");
+                if (numberlet <= 1) finback();
+                else {
+                    yourchoice.pop();
+                    if (finpa.style.display === "none") {
+                        numberlet --;
+                        getQbox("flex");
+                        eachprog(a => {
+                            a.value = numberlet;
+                            valanima(a, 1, 1);
+                        });
+                    }
+                    else disfinal();
+                    maxtop = gettop(); 
+                }
+            }
+            async function swi() {
+                switc.disabled = true;
+                theme() === "night" ? 
+                    changetheme( "day" , "☀️") : 
+                    changetheme("night", "🌙");
+                setTimeout(() => switc.disabled = false, 1000);
+            }
+            function final() {
+                let   charlist = Object.values(characters);
+                const charname = Object.keys  (characters);
+                yourchoice.forEach(choice => {
+                    let pointer = 0;
+                    charlist.forEach(char => {
+                        if (char[pointer].includes(choice)) {
+                            score[pointer] ++;
+                            pointer        ++;
+                        }
+                    });
+                });
+                alert(charname[score.indexOf(Math.max(...score))]);
+                getQbox("none");
+                finpa.style.display = "flex";
+            }
+            function finback() {
+                getQbox("none");
+                blkjv.style.display = "flex";
+                gobac.style.display = "none";
+                tip  .style.display = "block";
+            }
+            function disfinal() {
+                finpa.style.display = "none";
+                getQbox("flex");
+            }
+            function shadowfac(updown) {
+                return Object.assign(document.createElement('div'), {
+                    className : "shadowbox " + updown
+                })
+            }
+            function createsha(box) {
+                const shaup   = shadowfac( "up" );
+                const shadown = shadowfac("down");
+                box.prepend    ( shaup );
+                box.appendChild(shadown);
+            }
+            blkjv  .style.display = "flex";
+            backbox.style.display = "flex";
+            finpa  .style.display = "none";
+            for (let Qnum = 1; Qnum <= Que.length; Qnum ++) {
+                const Qnow    = Que[Qnum - 1];
+                const Qtitle  = Object.keys  (Qnow)[0];
+                const Answers = Object.values(Qnow)[0];
+                const Qb      = Object.assign(document.createElement('section'), {
+                    id          : "Qbox" + Qnum,
+                    className   : "Qbox"
+                });
+                const title   = Object.assign(document.createElement('h2'), {
+                    id          : "Q" + Qnum,
+                    innerHTML   : Qnum + ". " + Qtitle
+                });
+                const prog    = Object.assign(document.createElement('progress'), {
+                    className   : "Qremain",
+                    value       : 0,
+                    max         : Que.length
+                });
+                const present = Object.assign(document.createElement('p'), {
+                    innerHTML   : Math.round((Qnum - 1) / Que.length * 100) + "%"
+                });
+                const prob    = Object.assign(document.createElement('div'), {
+                    className   : "probox"
+                });
+                const buttb   = Object.assign(document.createElement('div'), {
+                    className   : "buttbox"
+                });
+                const buttnum = Object.assign(document.createElement('span'), {
+                    style       : "grid-column-start: 1; grid-column-end: -1;",
+                    textContent : `所有选项：A - ${Alphabet[Answers.length]}`
+                });
+                Qb  .append(title,  prob  );
+                prob.append(prog , present);
+                let ans = 0;
+                for (const As of Answers) {
+                    ans ++;
+                    const Alpha    = Object.assign(document.createElement('span'), {
+                        textContent : `${Alphabet[ans]}.`
+                    });
+                    const Question = Object.assign(document.createElement('button'), {
+                        type        : "button",
+                        className   : "Qbutton",
+                        id          : `Q${Qnum}_${ans}`,
+                        innerHTML   : As,
+                        onclick     : event => next(ans, event.currentTarget)
+                    });
+                    buttb.append(Alpha, Question);
+                }
+                buttb.prepend(buttnum);
+                if (ans > 4) {
+                    createsha(buttb);
+                } else {
+                    buttb.style.padding = "0.8rem";
+                }
+                const bboxup      = code => buttb.querySelector( '.up' ).style.visibility = code;
+                const bboxdown    = code => buttb.querySelector('.down').style.visibility = code;
+                window.notwaiting = true;
+                buttb .addEventListener("scroll", function() {
+                    if (notwaiting) {
+                        notwaiting = false;
+                        requestAnimationFrame(
+                            () => {
+                                if (this.scrollTop < 1) {
+                                    bboxup  ("hidden" );
+                                } else if (this.scrollTop > maxtop) {
+                                    bboxdown("hidden" );
+                                } else {
+                                    bboxup  ("visible");
+                                    bboxdown("visible");
+                                }
+                                notwaiting = true;
+                            }
+                        );
+                    }
+                }, {passive: true});
+                Qb   .appendChild(buttb);
+                mdiv .prepend    ( Qb  );
+            }
+            //可读性很差，你知道吗？😱把想要选中的第一个类型传进slct，函数会给它加上动画视奸器，动画视奸器触发之后，对slct2选中的所有元素执行func。你知道吗？
+            //h1在网页刚加载时就处于running状态，你知道吗？
+            const bjlisnr = (slct, slct2, func) => document.querySelector('#blkjvnb ' + slct).addEventListener('animationend', () => document.querySelectorAll('#blkjvnb ' + slct2).forEach(func), {once: true});
+            bjlisnr(  'h1'  ,               'p'                , a => a.style.animationPlayState = "running");
+            bjlisnr(  'p'   ,             'button'             , b => b.style.animationPlayState = "running");
+            bjlisnr('button', 'p, #blkjvnb h1, #blkjvnb button', c => c.style.animation          = "none"   );
+        </script>
+    </body>
+</html>
