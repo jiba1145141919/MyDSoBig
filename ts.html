@@ -83,6 +83,8 @@
             }
             #maindiv h1, #maindiv h2, #maindiv p, #maindiv span, #maindiv button:not(#switch) {
                 color                 : var(--minorcolor);
+            }
+            #maindiv h1, #maindiv h2, #maindiv p:not(nav), #maindiv span, #maindiv button:not(#switch) {
                 text-shadow           : 
                     -0.04em -0.04em var(--majorstroke),
                      0.04em -0.04em var(--majorstroke),
@@ -94,8 +96,8 @@
                         0em -0.04em var(--majorstroke);
             }
             @supports ((paint-order: stroke fill) and (-webkit-text-stroke: 1px #000)) {
-                #maindiv h1, #maindiv h2, #maindiv p:not(nav), #maindiv span, #maindiv button:not(#switch) {
-                    text-shadow         : none;
+                .webkitstroke {
+                    text-shadow         : none !important;
                     -webkit-text-stroke : 0.15rem var(--majorstroke);
                     paint-order         : stroke fill;
                 }
@@ -236,10 +238,23 @@
                 flex-direction        : row;
                 justify-content       : center;
                 align-items           : center;
-                background-color      : #fff;
+                background-color      : var(--majorstroke);
                 border-radius         : 10px;
-                border                : 1px solid #eee;
+                border                : 1px solid var(--minorshade);
                 padding               : 1rem;
+            }
+            #ad h4, #ad h3, #ad span {
+                margin                : 1rem;
+                padding               : 0;
+            }
+            #ad h3 {
+                font-size             : 1.5rem;
+            }
+            #ad h4 {
+                font-size             : 1.3rem;   
+            }
+            #ad span {
+                font-size             : 1rem;
             }
             #ad a {
                 text-decoration       : none;
@@ -459,9 +474,9 @@
                 <p><s>做题前，先说一遍：网页作者好帅</s></p>
             </main>
             <section id="finpage">
-                <h2>这里应该有测试结果，要是你看见这行字说明网页代码爆炸了。😂吧哈哈哈哈哈哈</h2>
+                <h2 id="fintle">这里应该有测试结果，要是你看见这行字说明网页代码爆炸了。😂吧哈哈哈哈哈哈</h2>
                 <img id="graph">
-                <p>这里应该有简介。江湖一笑浪涛涛 iywc 嘻嘻哈哈 嘻嘻哈哈哈嘻 嘻嘻哈哈江湖一笑浪涛涛 iywc 嘻嘻哈哈 嘻嘻哈哈哈嘻 嘻嘻哈哈</p>
+                <p id="fincribe">这里应该有简介。江湖一笑浪涛涛 iywc 嘻嘻哈哈 嘻嘻哈哈哈嘻 嘻嘻哈哈江湖一笑浪涛涛 iywc 嘻嘻哈哈 嘻嘻哈哈哈嘻 嘻嘻哈哈</p>
             </section>
             <nav id="backbox">
                 <p id="tip">这里本来应该是一个回退按钮，但是由于你还没答题，所以这里啥也没有。</p>
@@ -520,7 +535,7 @@
             </p>
         </noscript>
         <script>
-            const Que = 
+            const Que   = 
             [
                 {"呃。这个世界赶紧爆炸得了，吧哈哈😂":
                      [
@@ -1278,20 +1293,22 @@
                     [6]
                 ]
             };
-            const score       = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            let   score       = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
             const scorepreset = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
             const Alphabet    = ["感觉D好帅好帅好帅好帅", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N"];
             document.getElementById('showQnum').textContent = `${Que.length}题`;
             let   numberlet   = 1;
             const yourchoice  = [];
             const nowQbox     = () => `Qbox${numberlet}`;
-            const mdiv        = document.getElementById('maindiv');
-            const blkjv       = document.getElementById('blkjvnb');
-            const backbox     = document.getElementById('backbox');
-            const switc       = document.getElementById('switch' );
-            const gobac       = document.getElementById('goback' );
-            const tip         = document.getElementById(  'tip'  );
-            const finpa       = document.getElementById('finpage');
+            const mdiv        = document.getElementById('maindiv' );
+            const blkjv       = document.getElementById('blkjvnb' );
+            const backbox     = document.getElementById('backbox' );
+            const switc       = document.getElementById( 'switch' );
+            const gobac       = document.getElementById( 'goback' );
+            const tip         = document.getElementById(  'tip'   );
+            const finpa       = document.getElementById('finpage' );
+            const fint        = document.getElementById( 'fintle' );
+            const finc        = document.getElementById('fincribe');
             const htmlobj     = document.documentElement;
             const nowQelem    =  ()  => document  .getElementById(nowQbox());
             const theme       =  ()  => htmlobj   .dataset.theme;
@@ -1319,7 +1336,7 @@
                     window[`${box}eachtext`](stron);
                     htmlobj.dataset.theme     = them;
                     switc  .style  .animation = "esin 0.5s ease-in 1 forwards";
-                    switc  .addEventListener('animationend', resolve, {once: true});
+                    switc  .addEventListener('animationend', resolve, { once: true });
                 });
                 await pro;
                 swit(sw);
@@ -1330,8 +1347,12 @@
             const getBbox =  ()  => nowQelem().querySelector('.buttbox');
             //gettop容差不应该是正数⚠️⚠️⚠️⚠️⚠️
             //血的教训😭
-            let   gettop  =  ()  => getBbox ().scrollHeight - getBbox().clientHeight - 1;
+            const gettop  =  ()  => getBbox ().scrollHeight - getBbox().clientHeight - 1;
             let   maxtop  = 0;
+            /*function setfinpa {
+                fintle  .textContent = 
+                fincribe.textContent = 
+            }*/
             function sta() {
                 blkjvnb.style.display = "none";
                 tip    .style.display = "none";
@@ -1371,6 +1392,10 @@
                         valanima(a, 1, 0);
                     });
                     maxtop = gettop(); 
+                    /*
+                    if (maxtop <= 0) {
+                        nowQelem().querySelector('.buttb').querySelectorAll('.shadowbox').forEach(a => a.remove());
+                    }*/
                 }
             }
             function goback() {
@@ -1407,8 +1432,6 @@
                         }
                     });
                 });
-                alert(yourchoice);
-                alert(score);
                 alert(charname[score.indexOf(Math.max(...score))]);
                 getQbox("none");
                 finpa.style.display = "flex";
@@ -1422,6 +1445,7 @@
             function disfinal() {
                 finpa.style.display = "none";
                 getQbox("flex");
+                score = [...scorepreset];
             }
             function shadowfac(updown) {
                 return Object.assign(document.createElement('div'), {
@@ -1437,6 +1461,7 @@
             blkjv  .style.display = "flex";
             backbox.style.display = "flex";
             finpa  .style.display = "none";
+            const buttboxes = [];
             for (let Qnum = 1; Qnum <= Que.length; Qnum ++) {
                 const Qnow    = Que[Qnum - 1];
                 const Qtitle  = Object.keys  (Qnow)[0];
@@ -1486,15 +1511,12 @@
                     buttb.append(Alpha, Question);
                 }
                 buttb.prepend(buttnum);
-                if (ans > 4) {
-                    createsha(buttb);
-                } else {
-                    buttb.style.padding = "0.8rem";
-                }
+                createsha(buttb);
+                buttboxes.push(buttb);
                 const bboxup      = code => buttb.querySelector( '.up' ).style.visibility = code;
                 const bboxdown    = code => buttb.querySelector('.down').style.visibility = code;
                 window.notwaiting = true;
-                buttb .addEventListener("scroll", function() {
+                buttb .addEventListener("scroll", function scrollingwood() {
                     if (notwaiting) {
                         notwaiting = false;
                         requestAnimationFrame(
@@ -1511,13 +1533,17 @@
                             }
                         );
                     }
-                }, {passive: true});
+                }, { passive: true });
                 Qb   .appendChild(buttb);
                 mdiv .prepend    ( Qb  );
             }
+            if (/(iPhone|iPad|iPod|Macintosh)/i.test(navigator.userAgent)) {
+                //检测到安卓玩家直接坠机
+                mdiv.querySelectorAll('p, h1, h2, span').forEach(a => a.classList.add('webkitstroke'));
+            }
             //可读性很差，你知道吗？😱把想要选中的第一个类型传进slct，函数会给它加上动画视奸器，动画视奸器触发之后，对slct2选中的所有元素执行func。你知道吗？
             //h1在网页刚加载时就处于running状态，你知道吗？
-            const bjlisnr = (slct, slct2, func) => document.querySelector('#blkjvnb ' + slct).addEventListener('animationend', () => document.querySelectorAll('#blkjvnb ' + slct2).forEach(func), {once: true});
+            const bjlisnr = (slct, slct2, func) => document.querySelector('#blkjvnb ' + slct).addEventListener('animationend', () => document.querySelectorAll('#blkjvnb ' + slct2).forEach(func), { once: true });
             bjlisnr(  'h1'  ,               'p'                , a => a.style.animationPlayState = "running");
             bjlisnr(  'p'   ,             'button'             , b => b.style.animationPlayState = "running");
             bjlisnr('button', 'p, #blkjvnb h1, #blkjvnb button', c => c.style.animation          = "none"   );
