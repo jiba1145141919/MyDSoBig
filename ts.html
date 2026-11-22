@@ -5,6 +5,8 @@
         <meta name="description" content="全网首个黯巢au测试！点击即测，立刻看看你是哪个黯巢sprunki！Norby_C团队精心打造匠心制作 这个测试超级帅，把我的裤子都帅炸了！好准呀你也快来试试吧iywc iywc嘻嘻哈哈嘻嘻哈哈。眼前这个秃顶老汉子，因为去漫展在签名墙上画家产被骂小鬼别叫，他竟然想要搞破坏，啊哈哈😭😭😭人家是萌萌产品妹🤩黑蓝嘟嘟萌😙长得跟个小鬼似的😌你是个屁呀你是😡你也买个镜子照一照你自己吧🤪啊？👿你被骂小鬼，那是因为，你搞死放屁🤣为什么这么说我呀💔我要，搞破坏😭我要😡破坏！！！😈😈啊啊啊啊啊啊💥💥">
         <meta name="keywords" content="sprunki, 斯普伦基, 节奏盒子, 黯巢, 黯巢au, sprunki黯巢, 测试, 性格测试, 搞笑测试">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta rel="icon" href="https://s1.imagehub.cc/images/2026/11/18/6286e55afdebb7dd718126178ef39c8a.th.png" type="image/png">
+        <meta property="og:image" content="https://s1.imagehub.cc/images/2026/11/01/3be2b3f440e10d08c469adb1ad808247.th.png">
         <title>❤️测测你是哪个sprunki黯巢au角色❤️</title>
         <style>
             html, body {
@@ -18,14 +20,14 @@
                 transition            : --majorcolor 0.5s ease-out, --minorcolor 0.5s ease-out, --minorshade 0.5s ease-out, --majorstroke 0.5s ease-out, --glass 0.5s ease-out;
                 background            : #678;
             }
-            h1, h2, p, span, button, header, footer, section, article, img, nav, main, div, progress {
+            h1, h2, h3, p, label, span, button, header, footer, section, article, img, nav, main, div, progress {
                 box-sizing            : border-box;
             }
-            h1, h2, p, span {
+            h1, h2, h3, p, label, span {
                 margin                : 0;
                 padding               : 0;
             }
-            h1, h2, p, span, button {
+            h1, h2, h3, p, label, span, button {
                 text-align            : center;
                 white-space           : pre-wrap;
             }
@@ -48,8 +50,6 @@
                 position              : absolute;
                 inset                 : 0;
                 z-index               : -1;
-                height                : 100%;
-                width                 : 100%;
             }
             #foter {
                 position              : sticky;
@@ -81,19 +81,22 @@
                 background            : radial-gradient(circle farthest-corner at center, var(--majorcolor) 60%, var(--minorshade));
                 flex-grow             : 1;
             }
-            #maindiv h1, #maindiv h2, #maindiv p, #maindiv span, #maindiv button:not(#switch) {
+            #maindiv h1, #maindiv h2, #maindiv h3, #maindiv p, #maindiv span, #maindiv button:not(#switch), #maindiv caption {
                 color                 : var(--minorcolor);
             }
-            #maindiv h1, #maindiv h2, #maindiv p:not(nav), #maindiv span, #maindiv button:not(#switch) {
+            #maindiv label {
+                color                 : var(--tips);
+            }
+            #maindiv h1, #maindiv h2, #maindiv h3, #maindiv p:not(nav), #maindiv span, #maindiv button:not(#switch), #maindiv caption, #maindiv label {
                 text-shadow           : 
                     -0.04em -0.04em var(--majorstroke),
                      0.04em -0.04em var(--majorstroke),
                     -0.04em  0.04em var(--majorstroke),
                      0.04em  0.04em var(--majorstroke),
-                    -0.04em     0em var(--majorstroke),
-                        0em  0.04em var(--majorstroke),
-                     0.04em     0em var(--majorstroke),
-                        0em -0.04em var(--majorstroke);
+                    -0.05em     0em var(--majorstroke),
+                        0em  0.05em var(--majorstroke),
+                     0.05em     0em var(--majorstroke),
+                        0em -0.05em var(--majorstroke);
             }
             @supports ((paint-order: stroke fill) and (-webkit-text-stroke: 1px #000)) {
                 .webkitstroke {
@@ -109,11 +112,23 @@
                 width                 : 100%;
                 line-height           : 2.6rem;
             }
-            #maindiv p {
-                font-weight           : normal;
-                font-size             : 1rem;
+            #maindiv p, #maindiv label {
                 width                 : 80%;
                 line-height           : 1.3rem;
+                &:is(p) {
+                    font-size         : 1rem;
+                    font-weight       : normal;
+                }
+                &:is(label) {
+                    font-size         : 0.9rem;
+                    font-weight       : bold;
+                }
+            }
+            #maindiv caption, #maindiv h3 {
+                font-weight           : bold;
+                font-size             : 1.5rem;
+                width                 : 100%;
+                line-height           : 2.1rem;
             }
             #maindiv s {
                 text-decoration-color : var(--minorcolor);
@@ -154,10 +169,112 @@
             #maindiv button:active {
                 filter                : brightness(1.1);
             }
+            #maindiv table {
+                border-collapse       : collapse;
+                background-color      : var(--majorstroke);
+                width                 : 60%;
+                margin                : 1rem;
+                & :is(th, td) {
+                    border            : 2px ridge var(--minorcolor);
+                    color             : var(--minorcolor);
+                    padding           : 0.5em;
+                }
+                & th {
+                    font-size         : 1.2rem;
+                    font-weight       : bold;
+                }
+                & td {
+                    font-size         : 1rem;
+                    font-weight       : normal; 
+                }
+            }
+            #maindiv input {
+                background            : var(--majorcolor);
+                border                : thin solid var(--minorshade);
+                outline               : none;
+                border-radius         : 99px;
+                width                 : 50%;
+                aspect-ratio          : 20 / 1;
+                color                 : var(--minorcolor);
+                font-size             : 0.9rem;
+                -webkit-appearance    : none;
+                appearance            : none;
+                margin                : 0.2rem;
+            }
+            #maindiv input::placeholder {
+                color                 : var(--tips);
+                font-size             : 0.9rem;
+                opacity               : 1;
+                margin                : 0.1rem;
+            }
+            #can {
+                width                 : 100%;
+                aspect-ratio          : 1 / 1;
+            }
+            #justify {
+                background-color      : #0006;
+                pointer-events        : none;
+                position              : fixed;
+                display               : none;
+                flex-direction        : column;
+                justify-content       : center;
+                align-items           : center;
+                inset                 : 0;
+                height                : 100%;
+                width                 : 100%;
+                z-index               : 2;
+            }
+            #drawdiv {
+                pointer-events        : auto;
+                position              : relative;
+                display               : flex;
+                flex-direction        : column;
+                justify-content       : center;
+                align-items           : center;
+                padding               : 0 0.5rem;
+                width                 : 30rem;
+                height                : auto;
+                background            : linear-gradient(180deg, var(--minorshade) -100%, var(--majorstroke) 30%);
+                outline               : thin dashed var(--majorstroke);
+                & h3, & p {
+                    margin            : 1rem 0;
+                }
+                & label {
+                    margin            : 1rem 0;
+                }
+                & div {
+                    margin            : 1rem 0 0 0;
+                    display           : flex;
+                    flex-direction    : row;
+                    justify-content   : center;
+                    align-items       : center;
+                    width             : 100%;
+                    aspect-ratio      : 8 / 1;
+                }
+            }
+            #ok, #copy {
+                margin                : 0.4rem;
+                padding               : 0.3rem;
+                height                : 100%;
+            }
+            #ok {
+                flex-grow             : 1;
+            }
+            #copy {
+                aspect-ratio          : 1 / 1;
+                & img {
+                    height            : 100%;
+                    aspect-ratio      : 1 / 1;
+                }
+            }
             #start, #goback {
-                margin                : 30px;
+                display               : inline-flex;
+                margin                : 1rem;
                 min-width             : clamp(9rem, 25vw, 31rem);
                 aspect-ratio          : 4 / 1;
+            }
+            #highlite {
+                text-shadow           : 0 0 3px var(--minorshade);
             }
             #switch {
                 color                 : transparent;
@@ -177,30 +294,89 @@
                 flex-direction        : column;
                 align-items           : center;
                 justify-content       : center;
-                height                : 23rem;
-                min-height            : auto;
                 width                 : 100%;
                 margin                : 0;
             }
             #blkjvnb, #finpage {
+                height                : auto;
+                min-height            : 23rem;
                 padding               : 2rem;
             }
+            .Qbox {
+                height                : 23rem;
+                min-height            : 0;
+            }
+            #switbox, #choosebox {
+                outline               : thin dashed var(--majorstroke);
+                display               : flex;
+                flex-direction        : row;
+                justify-content       : center;
+                align-items           : center;
+                width                 : 70vw;
+                aspect-ratio          : 8 / 1;
+                margin                : 0.8rem;
+                padding               : 1rem;
+                box-shadow            : inset 0 1rem 4px -1rem var(--minorshade), inset 0 -1rem 4px -1rem var(--minorshade);
+            }
+            #pastebox {
+                display               : flex;
+                flex-direction        : row;
+                justify-content       : center;
+                align-items           : center;
+                width                 : 100%;
+            }
+            #subm {
+                height                : 100%;
+                aspect-ratio          : 2 / 1;
+                margin                : 0.1rem;
+            }
+            #result1, #result2, #result3, #finalback, #share {
+                flex-basis            : 100%;
+                flex-shrink           : 1;
+                flex-grow             : 1;
+                margin                : 0.1rem;
+                padding               : 0.5rem;
+                height                : 100%;
+                font-size             : 1.8rem !important;
+                & img {
+                    height            : 100%;
+                    aspect-ratio      : 1 / 1;
+                    object-fit        : cover;
+                    object-position   : center;
+                    border-radius     : 5px;
+                    margin            : 0;
+                    border            : thin dotted var(--minorshade);
+                    &:is(#switbox img) {
+                        margin-left   : auto;
+                    }
+                    &:is(#choosebox img) {
+                        margin-right  : auto;
+                    }
+                }
+            }
+            #choices {
+                margin                : 0.5rem;
+            }
             #beforebox {
-                height                : 100vh;
-                width                 : 100vw;
+                min-width             : 100%;
+                width                 : auto;
+                height                : 100%;
                 position              : absolute;
                 top                   : 0;
                 left                  : 0;
                 z-index               : -1;
             }
-            #blkjvnb h1, #blkjvnb p, #blkjvnb button {
-                animation             : startin 1s ease-out 1 backwards;
+            #blkjvnb p, #blkjvnb label {
+                animation             : startin 1s ease-out 1s 1 backwards;
             }
-            #blkjvnb p, #blkjvnb button {
-                animation-play-state  : paused;
+            #blkjvnb h1, #blkjvnb h3 {
+                animation             : startin 1s ease-out 0s 1 backwards;
             }
-            #blkjvnb h1 {
-                animation-play-state  : running;
+            #blkjvnb button, #blkjvnb input {
+                 animation            : startin 1s ease-out 2s 1 backwards;
+            }
+            #pasteh {
+                margin                : 1rem;
             }
             #showQnum {
                 display               : inline-block;
@@ -240,23 +416,23 @@
                 align-items           : center;
                 background-color      : var(--majorstroke);
                 border-radius         : 10px;
-                border                : 1px solid var(--minorshade);
+                border                : 1px solid var(--minorcolor);
                 padding               : 1rem;
             }
-            #ad h4, #ad h3, #ad span {
+            #adbox h4, #adbox h3, #adbox span {
                 margin                : 1rem;
                 padding               : 0;
             }
-            #ad h3 {
+            #adbox h3 {
                 font-size             : 1.5rem;
             }
-            #ad h4 {
+            #adbox h4 {
                 font-size             : 1.3rem;   
             }
-            #ad span {
+            #adbox span {
                 font-size             : 1rem;
             }
-            #ad a {
+            #adbox a {
                 text-decoration       : none;
                 display               : flex;
                 flex-direction        : row;
@@ -283,6 +459,8 @@
             #graph {
                 width                 : clamp(6rem, 30vw, 31rem);
                 aspect-ratio          : 1 / 1;
+                margin                : 1rem;
+                object-fit            : contain;
             }
             #Q14, #Q15_1 {
                 animation             : sb 0.3s linear infinite;
@@ -394,6 +572,14 @@
             @keyframes startin {
                 0% { opacity: 0; transform: translateY(-24px); }
             }
+            @keyframes format {
+                0%   { transform: translateX(-0.4rem); }
+                20%  { transform: translateX( 0.4rem); }
+                40%  { transform: translateX(-0.3rem); }
+                60%  { transform: translateX( 0.2rem); }
+                80%  { transform: translateX(-0.1rem); }
+                100% {                                 }
+            }
             /*这是我试出来的颜色不是ai给的❤️*/
             [data-theme = "night"] {
                 /*major 透明度c0 d0❌*/
@@ -402,6 +588,7 @@
                 --minorshade          : #17b9;
                 --majorstroke         : #000024;
                 --glass               : #22224840;
+                --tips                : #359;
             }
             [data-theme =  "day" ] {
                 --majorcolor          : #f8fdfdc9;
@@ -409,6 +596,7 @@
                 --minorshade          : #4bf9;
                 --majorstroke         : #f8fdfd;
                 --glass               : #fbfefe40;
+                --tips                : #48b;
             }
             @property --majorcolor {
                 syntax                : "<color>";
@@ -470,13 +658,56 @@
                 <p><strong id="showQnum">只因你太美哦贝贝</strong></p>
                 <p>这个网站呃它要求你<strong>诚实作答</strong>，你不诚实也行，但是这样的话呃结果就不准，吧哈哈哈哈哈iywc iywc</p>
                 <button type="button" id="start" onclick="sta()" tabindex="0">点鸡开死。</button>
-                <p>当你回退时，<br>你的答题记录会<strong style="text-shadow: 0 0 3px var(--minorshade)">高亮显示</strong>。👍<br>按钮🔘太多时，可以拖动滚动条↕️预览全部选项<br>题都<strong>很短很简单</strong>，不用费脑子🧠想半天❗️</p>
+                <p>当你回退时，<br>你的答题记录会<strong id="highlite">高亮显示</strong>。👍<br>按钮🔘太多时，可以拖动滚动条↕️预览全部选项<br>题都<strong>很短很简单</strong>，不用费脑子🧠想半天❗️</p>
                 <p><s>做题前，先说一遍：网页作者好帅</s></p>
+                <h3 id="pasteh">或者，直接粘贴选项：</h3>
+                <div id="pastebox">
+                    <input type="text" id="paste" placeholder="在这里粘贴选项">
+                    <button type="button" id="subm" onclick="subm()">提交</button>
+                </div>
+                <label id="format" for="paste">D好帅</label>
             </main>
             <section id="finpage">
-                <h2 id="fintle">这里应该有测试结果，要是你看见这行字说明网页代码爆炸了。😂吧哈哈哈哈哈哈</h2>
+                <div id="justify">
+                    <div id="drawdiv">
+                        <h3>已创建分享文本：</h3>
+                        <p id="sharetext">我发现了一个神仙的sprunki黯巢au测试小游戏！我的天哪，我与<strong id="sharename"></strong>的相似度居然高达<strong id="shareper"></strong>！你也快来试试吧，点击即测：https://jiba1145141919.github.io/MyDSoBig/ts.html</p>
+                        <div>
+                            <button id="ok" type="button" onclick="justify.style.display = 'none'; copyla.textContent = '点击右侧按钮复制'">知道了。</button>
+                            <button id="copy" type="button" onclick="navigator.clipboard.writeText(sharetext.textContent); copyla.textContent = '复制成功！'"><img src="https://s1.imagehub.cc/images/2026/11/22/bb0516b1cc6be6ef15035030c2000e74.th.png" alt="复制到剪贴板"></button>
+                        </div>
+                        <label id="copyla" for="copy">点击右侧按钮复制</label>
+                    </div>
+                </div>
+                <h2>你的结果：</h2>
+                <h3>⬇️在这里切换不同结果⬇️</h3>
+                <div id="switbox">
+                    <button type="button" id="result1"></button>
+                    <button type="button" id="result2"></button>
+                    <button type="button" id="result3"></button>
+                </div>
                 <img id="graph">
+                <p><strong id="charn">这里应该有测试结果，要是你看见这行字说明网页代码爆炸了。😂吧哈哈哈哈哈哈</strong></p>
                 <p id="fincribe">这里应该有简介。江湖一笑浪涛涛 iywc 嘻嘻哈哈 嘻嘻哈哈哈嘻 嘻嘻哈哈江湖一笑浪涛涛 iywc 嘻嘻哈哈 嘻嘻哈哈哈嘻 嘻嘻哈哈</p>
+                <table>
+                    <thead>
+                        <caption>这是你的总得分：</caption>
+                        <tr>
+                            <th>角色</th>
+                            <th>得分</th>
+                            <th>百分比</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scores">
+                    </tbody>
+                </table>
+                <h3>这是你的选择：</h3>
+                <p id="choices"></p>
+                <h3 style="margin: 3rem 0 0 0">更多选项</h3>
+                <div id="choosebox">
+                    <button type="button" id="finalback" onclick="heilan()"><img src="https://s1.imagehub.cc/images/2026/11/22/40fa15ca22818d8ac409d366a41fb0b7.th.png" alt="房紫图标。">回到守页。</button>
+                    <button type="button" id="share" onclick="share()"><img src="https://s1.imagehub.cc/images/2026/11/22/71aff682a625137539697bbe00f81f6c.th.png" alt="分享图标-三个点连在一起。">分想。</button>
+                </div>
             </section>
             <nav id="backbox">
                 <p id="tip">这里本来应该是一个回退按钮，但是由于你还没答题，所以这里啥也没有。</p>
@@ -491,7 +722,7 @@
                         <h3>来看看世界上最帅的帅哥的美图！</h3>
                         <span>超帅的D美图，数量不多，但是顶级的惊艳，保证把人帅炸，超级牛逼</span>
                     </div>
-                    <img id="shuai" src="https://s1.imagehub.cc/images/2026/10/27/d64d45adfe89502aa6ca3a447ba7bbec.th.png" alt="一个白毛帅哥名叫D，双手上有一个1和一个0，画面上显示了一行有着红色背景的白色文本：你已急哭" loading="lazy">
+                    <img id="shuai" src="https://s1.imagehub.cc/images/2026/10/27/d64d45adfe89502aa6ca3a447ba7bbec.th.png" alt="一个帅哥名叫D，双手上有一个1和一个0，画面底部是一行有着方框背景的文本：你已急哭" loading="lazy">
                 </a>
             </article>
         </div>
@@ -534,8 +765,11 @@
                 BV1az4y1t7t1
             </p>
         </noscript>
+        <script src="https://cdn.staticfile.org/eruda/2.11.2/eruda.min.js"></script>
+        <script>eruda.init();</script>
         <script>
-            const Que   = 
+            "use strict";
+            const Que = 
             [
                 {"呃。这个世界赶紧爆炸得了，吧哈哈😂":
                      [
@@ -775,11 +1009,11 @@
                 black   : [
                     [2],
                     [1, 7],
-                    [2, 3, 4, 5],
-                    [1, 2, 5, 6, 7],
+                    [3, 4, 5],
+                    [1, 2, 5, 6],
                     [1, 5],
-                    [3, 5, 6],
                     [5, 6],
+                    [5],
                     [3, 6],
                     [3, 5, 7],
                     [2, 5],
@@ -789,9 +1023,9 @@
                     [],
                     [],
                     [],
-                    [7, 8, 9, 10, 11],
-                    [3, 4, 5, 6, 7, 8, 9],
-                    [2, 3, 8, 9, 10],
+                    [7, 8, 9, 11],
+                    [3, 4, 6, 7, 8, 9],
+                    [3, 8, 9, 10],
                     [1],
                     [1],
                     [],
@@ -800,15 +1034,15 @@
                 ],
                 brud    : [
                     [7],
-                    [5, 8],
+                    [8],
                     [6, 7],
                     [4, 5],
-                    [2, 4, 6],
+                    [4, 6],
                     [2, 4],
-                    [1, 3, 5],
-                    [1, 4],
-                    [3, 6, 8],
-                    [2, 3, 4],
+                    [1, 5],
+                    [4],
+                    [3, 8],
+                    [2, 4],
                     [],
                     [],
                     [],
@@ -817,7 +1051,7 @@
                     [],
                     [10],
                     [1, 9],
-                    [6, 10],
+                    [6, 10, 11],
                     [2, 3],
                     [2],
                     [],
@@ -827,11 +1061,11 @@
                 clukr   : [
                     [1, 3],
                     [2, 4, 7],
-                    [2, 4],
+                    [2, 4, 5],
                     [2, 3],
                     [3],
                     [1, 3, 5],
-                    [2, 3],
+                    [2, 3, 6],
                     [1, 5],
                     [1, 2, 4],
                     [2],
@@ -843,7 +1077,7 @@
                     [],
                     [6, 10],
                     [2, 5, 6, 7],
-                    [6],
+                    [1, 6],
                     [2],
                     [2],
                     [],
@@ -851,12 +1085,12 @@
                     []
                 ],
                 durple  : [
-                    [4],
-                    [8],
+                    [4, 7],
+                    [5, 8],
                     [1],
                     [1, 2, 3],
-                    [1, 4, 5],
-                    [4],
+                    [1, 5],
+                    [4, 5],
                     [3],
                     [1, 4],
                     [2, 7],
@@ -894,7 +1128,7 @@
                     [],
                     [],
                     [1, 2, 3, 7, 8, 9, 10, 11],
-                    [1, 9],
+                    [1, 6, 9],
                     [2, 4, 5, 6, 9, 10],
                     [1],
                     [2],
@@ -909,7 +1143,7 @@
                     [3],
                     [3, 5],
                     [1, 2, 4],
-                    [1, 3, 5],
+                    [1, 5],
                     [4, 6],
                     [7, 8],
                     [3, 4, 5],
@@ -919,7 +1153,7 @@
                     [],
                     [],
                     [],
-                    [1, 2, 4, 5, 7, 8, 9, 10, 11],
+                    [1, 2, 3, 7, 8, 9, 10, 11],
                     [1, 8, 9],
                     [2, 4, 5, 6, 10],
                     [1, 3],
@@ -956,12 +1190,12 @@
                 ],
                 jevin   : [
                     [2, 5],
-                    [1, 3, 6, 7],
-                    [2, 5, 6],
-                    [1, 2, 5, 7],
+                    [3, 6, 7],
+                    [2, 6],
+                    [1, 2, 7],
                     [2, 5],
                     [3, 5],
-                    [4],
+                    [2, 4],
                     [1, 5],
                     [2, 5],
                     [2],
@@ -972,7 +1206,7 @@
                     [],
                     [],
                     [4, 5],
-                    [1, 2, 3, 4, 5, 6, 7],
+                    [1, 2, 3, 4, 5, 6],
                     [1, 3, 7],
                     [2],
                     [2, 3],
@@ -984,12 +1218,12 @@
                     [7],
                     [8],
                     [6, 7],
-                    [3, 4],
+                    [3],
                     [2],
                     [2],
                     [1],
                     [4],
-                    [3, 6, 7],
+                    [6, 7],
                     [2, 3, 4],
                     [],
                     [],
@@ -1015,7 +1249,7 @@
                     [2, 5],
                     [3, 4],
                     [1, 4],
-                    [6, 8],
+                    [1, 6, 8],
                     [3, 4],
                     [],
                     [],
@@ -1024,8 +1258,8 @@
                     [],
                     [],
                     [2, 3],
-                    [5],
-                    [1, 8],
+                    [2, 5],
+                    [1, 8, 11],
                     [2],
                     [2, 3],
                     [],
@@ -1059,14 +1293,14 @@
                     []
                 ],
                 owakcx  : [
-                    [6, 7],
+                    [7],
                     [8],
                     [6],
                     [4],
                     [2],
                     [2, 4],
                     [1, 4],
-                    [1, 2, 4],
+                    [2],
                     [6, 8],
                     [1, 4],
                     [],
@@ -1088,11 +1322,11 @@
                     [7],
                     [8],
                     [7],
-                    [3, 5, 7],
+                    [3, 7],
                     [2],
                     [2],
                     [1],
-                    [2, 4],
+                    [4],
                     [6, 8],
                     [3, 4],
                     [],
@@ -1101,7 +1335,7 @@
                     [],
                     [],
                     [],
-                    [1, 2, 4, 5],
+                    [2, 4, 5],
                     [1],
                     [6, 11],
                     [2, 3],
@@ -1113,11 +1347,11 @@
                 raddy   : [
                     [1],
                     [2],
-                    [2],
+                    [2, 5],
                     [1, 2, 3],
-                    [2, 3, 6],
+                    [3, 6],
                     [3, 5],
-                    [1, 3],
+                    [3, 4, 6],
                     [1],
                     [1, 2],
                     [2],
@@ -1127,7 +1361,7 @@
                     [],
                     [],
                     [],
-                    [6, 7, 10],
+                    [6, 7],
                     [1, 2, 7],
                     [5, 6, 10, 11],
                     [1, 3],
@@ -1139,11 +1373,11 @@
                 simon   : [
                     [2, 4],
                     [1, 7],
-                    [3, 5],
+                    [3],
                     [1, 2, 5, 6],
                     [1, 5, 6],
-                    [2, 4, 5, 6],
-                    [3, 5, 6],
+                    [4, 5, 6],
+                    [3, 5],
                     [3, 6],
                     [2, 3, 5, 7],
                     [2, 5],
@@ -1154,7 +1388,7 @@
                     [],
                     [],
                     [3, 7, 10, 11],
-                    [1, 6, 7, 8, 9],
+                    [6, 7, 8, 9],
                     [2, 6, 9, 10],
                     [1],
                     [2, 3],
@@ -1165,13 +1399,13 @@
                 sky     : [
                     [7],
                     [8],
-                    [5, 6],
-                    [3, 5, 7],
+                    [6],
+                    [3],
                     [2, 6],
-                    [1, 2, 4],
+                    [1, 4],
                     [1, 4],
                     [4],
-                    [6, 8],
+                    [1, 8],
                     [3, 4],
                     [],
                     [],
@@ -1179,7 +1413,7 @@
                     [],
                     [],
                     [],
-                    [1, 3],
+                    [1, 3, 7],
                     [1],
                     [4, 6, 10, 11],
                     [2, 3],
@@ -1207,7 +1441,7 @@
                     [],
                     [4, 5, 7, 10],
                     [1, 5, 7, 9],
-                    [4, 6],
+                    [4, 6, 11],
                     [3],
                     [2, 3],
                     [],
@@ -1220,8 +1454,8 @@
                     [1, 5],
                     [1, 2, 3],
                     [3, 6],
-                    [3, 4, 5],
-                    [3, 4, 6],
+                    [4, 5],
+                    [1, 3],
                     [1, 5],
                     [2, 4],
                     [2],
@@ -1233,8 +1467,8 @@
                     [],
                     [4, 5, 6],
                     [1, 2, 7],
-                    [1, 10],
-                    [2, 3],
+                    [1, 10, 11],
+                    [1, 3],
                     [2],
                     [],
                     [],
@@ -1246,10 +1480,10 @@
                     [1],
                     [4, 5, 7],
                     [4, 6],
-                    [1, 4, 5],
+                    [1, 4],
                     [3],
                     [2, 4],
-                    [1, 2],
+                    [1, 2, 8],
                     [1, 4],
                     [],
                     [],
@@ -1259,7 +1493,7 @@
                     [],
                     [2, 10],
                     [2, 5, 9],
-                    [1, 4],
+                    [4, 10],
                     [2, 3],
                     [2],
                     [],
@@ -1269,13 +1503,13 @@
                 wenda   : [
                     [1, 6],
                     [2, 5],
-                    [1, 2, 3, 5],
+                    [1, 2, 3],
                     [1, 2, 5, 6],
                     [1, 5, 6],
                     [3, 5, 6],
+                    [1, 3],
                     [2, 6],
-                    [2, 3, 4, 6],
-                    [1, 4, 5],
+                    [1, 5, 6],
                     [2, 5],
                     [6],
                     [6],
@@ -1283,9 +1517,9 @@
                     [],
                     [],
                     [],
-                    [1, 2, 3, 6, 7, 8, 9, 10, 11],
+                    [3, 6, 7, 8, 9, 10],
                     [2, 5, 6, 7, 8, 9],
-                    [1, 2, 3, 4, 5, 9, 10],
+                    [1, 2, 4, 10],
                     [1, 3],
                     [1, 2],
                     [],
@@ -1293,30 +1527,107 @@
                     [6]
                 ]
             };
-            let   score       = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-            const scorepreset = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-            const Alphabet    = ["感觉D好帅好帅好帅好帅", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N"];
+            const links =
+            [
+                "https://s1.imagehub.cc/images/2026/11/16/2350dbdadad785df2f2386057ce4846c.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/16/87fe51deff427202eb0ba0b6691c20a5.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/16/7bc043d5ef53a0f32cd266da668ef8f5.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/16/88889a7f720ea7dc0de74a468f9a09b8.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/17/4527024dd2039ca652473412dedf2378.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/16/1de7ac47c9d59f271718e45332ed01c9.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/16/09487436ed05b935f8a3b23311d6eed0.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/17/b7773bef041550ec55b3c05409e89cc2.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/17/622cf559e43de5e345278e8d9623e016.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/16/24e8b58baf5597ad5dec09a71555679e.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/16/1cc2fbd3a5f8517b3fcb160e8f0ca603.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/16/21559d93e43d25be177c94961361c774.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/16/1a42855b017d917aa76846f9a43cc7bf.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/16/337a4662084c4e795468864b846c5e11.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/17/a30922857b977f28ea41a1236223664c.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/16/170a1e3fdc96d956425ec0818b988c0b.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/17/02c8971b658f3c9639673696fe0adf6c.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/16/43a586410eca7cbd239a811c26d95a98.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/16/f517cd2731f6f4f731f24dc56bfd1555.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/16/02b97fe7430cf3c09d4f47efd411a9cb.jpeg"
+            ];
+            const charnames =
+            [
+                "Black",
+                "brud",
+                "Clukr",
+                "Durple",
+                "Fun Bot",
+                "Garnold",
+                "Gray",
+                "Jevin",
+                "Mr. Fun Computer",
+                "Mr. Sun",
+                "Oren",
+                "OWAKCX",
+                "Pinki",
+                "Raddy",
+                "Simon",
+                "Sky",
+                "Tree",
+                "Tunner",
+                "Vineria",
+                "Wenda"
+            ];
+            const intro = 
+            [
+                "🖤🎩👔🤵‍♂️👁️🐙😈😱我的法克啊能测出来这个的是神了吧哈哈哈。你是一个特别神人的乐子人🧐，感觉就像，啥也不在意一样😂，别人：你是傻子吧？你：你说得对🤣。感觉就是这个人已经不知天地为何物了，嗯对。你怎么想做什么就做什么",
+                "🤎🪏我找不到铁桶或者泥巴的emoji。brud不啥。。不啥。就是你是一个很温柔体贴的人，不喜欢挑起冲突，嗯。就是你是一个，巧克力味小太阳☀️。总之你是一个比较简单的人，城府不深，脑子里面没有太多圆滑世故的东西。不知道你吃不吃苔藓。吧哈哈哈",
+                "刮拔\n[唐]Clukr\n全家死刮拔，\n刮拔死全家。\n刮刮拔拔拔，\n死死全全家。\n🩶🔧🔨🛠️⚙️🔩⚒️⛓️🤖💻你是一个头上带光盘💿的人。这是很聪明的人。嗯，这个人非常的喜欢，体贴地问候其他人的家人。如果说他让别人关门，结果要是还有人没关门，他就写张纸条说不关门死母。吓得Garnold每次赶紧捂他的嘴。我也不知道他是真暴躁还是说习惯了而已。你测出来这个，说明你可能要变得和他一样了😱！",
+                "💜🐉📖📚🌟👓🤓你是龙🐲。龙的传人😂。嗯你是一个喜欢自由的人，你就不喜欢被计划束缚、被集体绑架。你喜欢新奇的东西，不喜欢被困在坏心情里太久。然后对于你非常喜欢的东西，你也会花精力去钻研。总的来说你就是很喜欢新奇的事物。这个就是你的，结果。祝你活出自我🤩。这是龙，中国龙，他们代表着中国🇨🇳神话📜中的神兽，你们🐻这帮丛林土鳖！",
+                "🤖💛🩶🥽🥁🪘😃你是这个🤪，❓❗️⚠️人机⚠️❗️❓呃你是比较不掩饰真实想法的人，然后你很👍赞！是那种不太爱斤斤计较的类型。你也有点皮，可能会有点外向。但是你不坏，就是皮而已。总的来说，这个性格还是挺讨喜的。朋友可能会很多。如果网站作者说错了，你可以在心里默默把他打死一百遍。😵",
+                "💛🥽⚙️🤖💻🪖你是这个，美团外卖员😂。你是一个比较聪明的人。那么呃，大部分人对你的整体印象就是好脾气，不喜欢正面冲突。其实你也是个很爱奇异搞笑的人！？但是你的礼貌又弥补了这一点，所以你看着就很折中。实际上很想搞抽象。😂抽象派大师来了。",
+                "🩶🕊️🧳这是鸽子还是猞猁😵。你就是那种，特别标准的正常人，但不是脾气最好的那批。看见傻福时，第一反应是别靠近我，然后点个举报。但这不代表你内心四平八稳。你看见傻福的时候，内心其实是这样的：wocwocwoc神人阴死了离我远点！",
+                "💙🧢👿🦹‍♂️🫠测出这个的你是这个👍。你是顶级阴暗逼整天就要炸世界，特别恐怖你知道吗？你完完全全就是把社会上标准的三观当垃圾的那种人。表面上你挺老实，内心可能在谋划怎么杀人。你一出场，周围直接阴气逼人。总的来说就是，累了，毁灭吧。",
+                "💻🪽🧢🌀你是这个，电脑🧑‍💻！和隔壁那个Jevin不一样，你的三观非常标准，扶老奶奶过马路这种事对你来说简直天经地义。你不想和别人搞差关系，也不想违背公序良俗。但这不能说明你一定是个纯良的人，也许你只是把某些事情藏在心底了。回看一下，说不定你也有想打人的时候😱",
+                "☀️🐦‍⬛🌻👼😇🪽你是一个黄色的大八角！你的观念总是和社会准则一致，俗称三观很正。你会尽力帮助别人，但当你必须做出取舍和牺牲的时候，你也不会一直犹豫不决。虽然看起来可能不是那种标准的好人形象，但你其实是真心想对别人好的🧐！",
+                "🧡🎧⭐️✨🩷呃，你是那种标准的绝世好人！哪怕是碰到有坏人要攻击你，你第一反应也是先沟通。你是那种很招人喜欢的性格，不记仇👍。当其他人陷入危险，你也会尽自己所能去帮助别人。我也不知道怎么描述，反正就像那种动画片里的正派，喜欢你的人应该很多。",
+                "💚🍃🌿🍀🌱🪴恭喜你，你是个小草🌿。你看起来是一个很善良，很普通的人，似乎没有什么特别在乎的事。但你其实挺容易担惊受怕，也不是完全没有脾气。🤨当有人攻击你的时候，你会生气、会不舒服，但是你也不会记恨别人太久。但这和你确实善良不冲突。",
+                "🩷💕💞💗💓💖💘💝🐰🧡你是一个非常体贴，乐于助人的，好人！😍。总的来说，你很温柔不记仇，但不是完全不在意别人的目光的那种人。💗。我也不知道怎么说，你就是那种小学生作文里经常出现的，帮助主角的好人。为其他人奉献是你的人生准则。非常的大公无私，嗯对👍。",
+                "♥️❤️❤️‍🩹💔❤️‍🔥❣️🔥💥🧨💀呃你是红色🟥刺头男子。你表面上看着很凶，让人觉得很不近人情，但其实，你内心深处是柔软的🥰。看着好像很容易因为一件事气很久，但其实你挺不计前嫌的。就是你平常也会做些好事。你是外冷内热，还是啥？我也不知道吧哈哈。",
+                "💛🦒💸💰💵💴💶💷💳🪙🪎🏍️🛵🛞🛣️恭喜你，你居然离这个世界上最神的神人只差一步之遥，但你却偏偏不是！😵‍💫你非常的任性，喜欢到处搞破坏，完全不守规矩。但这只是因为你比较率性而为、随性洒脱，杀人放火的事你是不干的，至少不会真带着恶意去主动干。对于亲近的人，你也很慷慨。你是一个柠檬🍋🍋‍🟩。",
+                "🩵🐻💧⛲️✡️🔯📘你是，这个蓝色的小熊。🧐其实呢，你是一个比较聪明、成熟的人，似乎懂得很多。但你又有像小孩子的一面，也喜欢玩。总的来说，你是比较冷静的，不会撒泼打滚哭哭闹闹。同龄人：蛋〇派对，第〇人格，王〇荣耀，迷〇世界。我：和百岁老年人、当地警长聊的有来有回，就很…😂（那个游戏我也玩过，这是玩梗不是黑不是黑不是不是不是）",
+                "🤎💚🌲🌳🌴🪾📗你是一个好心的热情老年人👍和其他人相比，你的经验非常充足，懂得为人处事的基本原则。你脾气算是，比较好的🤔！然后你也比较随和，很难因为一件小事就大发雷霆，但你心里也有自己的计划。你不是那种会盼着坏人变好的人，该出手就出手。😌😮",
+                "🩶🤎💛🪶🔫🦖🦕🦎🐊你是辉耀市第一110👮‍♂️，没人敢跟你对视😱。其实呢，你没有什么远大的理想，就是普普通通过一辈子，对你来说也可以了，但是你有讨厌的人弥补了这一点。碰到讨厌的人，你会气炸。😂你甚至可以尽全力，只为了把他打死。看见这些傻福在你面前蹦迪你就特别的来气。🤬😨",
+                "💚🪴🌴🌳🌲🪾🦌🦜👒你是这个，绿色，藤蔓女！？？！。你不是那种悲天悯人的性格，不管是什么坏事，只要不冲着你来，你就很难太在意。但是要是有人敢碰你年迈的父母，身边的兄弟，怀里的女人，那么，你进去，他下去！呵呵…/n你不是那种莽撞的性格，有自己的计划，也有聪明才智，总是能保护好身边的亲朋好友💪非常厉害的人！",
+                "🤍🐈🐈‍⬛😺🐱🔪🩸💀你是，一个茂。你是一个精致的，小茂密🐱，平时总是能给人留下好印象，但是要是有个讨厌的人一直在身边，企图控制你，你巴不得他死🤮！你不是那种纯良又无害的形象，更在意自己的利益。可能有些人会觉得你太自私，但是偶尔自私一点，有什么不好的，呢？🧐🤨🤔"
+            ];
+            const Alphabet    = ["感觉D好帅好帅好帅好帅", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"];
             document.getElementById('showQnum').textContent = `${Que.length}题`;
             let   numberlet   = 1;
             const yourchoice  = [];
             const nowQbox     = () => `Qbox${numberlet}`;
-            const mdiv        = document.getElementById('maindiv' );
-            const blkjv       = document.getElementById('blkjvnb' );
-            const backbox     = document.getElementById('backbox' );
-            const switc       = document.getElementById( 'switch' );
-            const gobac       = document.getElementById( 'goback' );
-            const tip         = document.getElementById(  'tip'   );
-            const finpa       = document.getElementById('finpage' );
-            const fint        = document.getElementById( 'fintle' );
-            const finc        = document.getElementById('fincribe');
+            const mdiv        = document.getElementById( 'maindiv'  );
+            const blkjv       = document.getElementById( 'blkjvnb'  );
+            const backbox     = document.getElementById( 'backbox'  );
+            const switc       = document.getElementById(  'switch'  );
+            const gobac       = document.getElementById(  'goback'  );
+            const tip         = document.getElementById(   'tip'    );
+            const finpa       = document.getElementById( 'finpage'  );
+            const finc        = document.getElementById( 'fincribe' );
+            const sctable     = document.getElementById(  'scores'  );
+            const choices     = document.getElementById( 'choices'  );
+            const charn       = document.getElementById(  'charn'   );
+            const graph       = document.getElementById(  'graph'   );
+            const paste       = document.getElementById(  'paste'   );
+            const format      = document.getElementById(  'format'  );
+            const sharename   = document.getElementById('sharename' );
+            const shareper    = document.getElementById( 'shareper' );
+            const sharetext   = document.getElementById('sharetext' );
+            const justify     = document.getElementById( 'justify'  );
+            const copyla      = document.getElementById(  'copyla'  );
             const htmlobj     = document.documentElement;
             const nowQelem    =  ()  => document  .getElementById(nowQbox());
             const theme       =  ()  => htmlobj   .dataset.theme;
             const eachprog    = code => nowQelem().querySelectorAll('.Qremain').forEach(code);
-            const eachbutt    = code => nowQelem().querySelectorAll( 'button' ).forEach(code);
-            window.Qeachtext  = function(code) {mdiv.querySelectorAll(`#${nowQbox()} :is(h2, span, p:not(nav p))`).forEach(code);};
-            window.Beachtext  = function(code) {mdiv.querySelectorAll(     '#blkjvnb :is(h1, p:not(nav p))'      ).forEach(code);};
-            window.Feachtext  = function(code) {mdiv.querySelectorAll(     '#finpage :is(h2, p:not(nav p))'      ).forEach(code);};
+            const widow       = { shalet: 0 };
+            widow.Qeachtext   = function(code) {mdiv.querySelectorAll(`#${nowQbox()} :is(h2, span, p:not(nav p))`).forEach(code);};
+            widow.Beachtext   = function(code) {mdiv.querySelectorAll(     '#blkjvnb :is(h1, p:not(nav p))'      ).forEach(code);};
+            widow.Feachtext   = function(code) {mdiv.querySelectorAll(     '#finpage :is(h2, p:not(nav p))'      ).forEach(code);};
             const swit        =  sw  => switc.textContent      = sw;
             const stron       =  a   => a    .style.willChange = "-webkit-text-stroke";
             const stroff      =  b   => b    .style.willChange = "auto";
@@ -1333,14 +1644,14 @@
                         "F" :  
                         "Q";
                 const pro = new Promise(resolve => {
-                    window[`${box}eachtext`](stron);
+                    widow[`${box}eachtext`](stron);
                     htmlobj.dataset.theme     = them;
                     switc  .style  .animation = "esin 0.5s ease-in 1 forwards";
                     switc  .addEventListener('animationend', resolve, { once: true });
                 });
                 await pro;
                 swit(sw);
-                window[`${box}eachtext`](stroff);
+                widow[`${box}eachtext`](stroff);
                 switc.style.animation = "esout 0.5s ease-out 1 forwards";
             };
             const getQbox = disp => nowQelem().style.display = disp;
@@ -1348,17 +1659,22 @@
             //gettop容差不应该是正数⚠️⚠️⚠️⚠️⚠️
             //血的教训😭
             const gettop  =  ()  => getBbox ().scrollHeight - getBbox().clientHeight - 1;
-            let   maxtop  = 0;
-            /*function setfinpa {
-                fintle  .textContent = 
-                fincribe.textContent = 
-            }*/
+            let   maxtop;
+            window.notwaiting = true;
+            function setfinpa(charcode) {
+                charn    .textContent = charnames[charcode];
+                fincribe .textContent = intro    [charcode];
+                graph    .src         = links    [charcode];
+                sharename.textContent = charnames[charcode];
+                shareper .textContent = document.getElementById(`P${charcode}`).textContent;
+            }
             function sta() {
                 blkjvnb.style.display = "none";
                 tip    .style.display = "none";
                 gobac  .style.display = "flex";
                 getQbox("flex");
-                maxtop = gettop();           
+                maxtop = gettop(); 
+                shatest();
             }
             //a+b- a当前值 b离预期值的剩余值
             function valanima(a, b, backmode) {
@@ -1377,14 +1693,14 @@
                 else a.value = numberlet - 1;
             }
             //这个valanima不是ai写的。😭你们怎么都说。这是ai的？这是我一步步，从分段判断，while，改成二分之一，递归。的。😭😖😫🧨💥
-            function next(ans, btn) {
-                eachbutt(a => a.style.backgroundColor = "var(--glass)");
+            function next(ans) {
                 getQbox("none");
                 yourchoice.push(ans);
                 //永远怀念 litebtn 动画（因为贼机儿麻烦和性能太烂被删除）
-                btn.style.backgroundColor = "var(--minorshade)";
-                if (numberlet >= Que.length) final();
-                else {
+                if (numberlet >= Que.length) {
+                    if (widow.shalet >= Que.length) shatest = () => {};
+                    final();
+                } else {
                     numberlet ++;
                     getQbox("flex");
                     eachprog(a => {
@@ -1392,10 +1708,7 @@
                         valanima(a, 1, 0);
                     });
                     maxtop = gettop(); 
-                    /*
-                    if (maxtop <= 0) {
-                        nowQelem().querySelector('.buttb').querySelectorAll('.shadowbox').forEach(a => a.remove());
-                    }*/
+                    shatest();
                 }
             }
             function goback() {
@@ -1410,8 +1723,7 @@
                             a.value = numberlet;
                             valanima(a, 1, 1);
                         });
-                    }
-                    else disfinal();
+                    } else disfinal();
                     maxtop = gettop(); 
                 }
             }
@@ -1424,15 +1736,46 @@
             }
             function final() {
                 const charlist = Object.values(characters);
-                const charname = Object.keys  (characters);
-                yourchoice.forEach((choice, Qcode) => {
+                const score    = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+                let   top3     = [];
+                
+                yourchoice.forEach((choice, Qcode) =>
                     charlist.forEach((char, pointer) => {
                         if (char[Qcode].includes(choice)) {
+                            //charQcode 获取此角色中问题编号对应的加分点 scorepointer 为score中角色对应的分值+1
                             score[pointer] ++;
                         }
-                    });
+                    })
+                );
+                
+                score.forEach((nowscore, index) =>
+                    document.getElementById(`S${index}`).textContent = nowscore
+                );
+                
+                charlist.forEach((nowchar, index) => {
+                    let fullscore = 0;
+                    //计分数组不为空则fullscore+1
+                    nowchar.forEach(nowQ =>
+                        nowQ !== [] && fullscore ++
+                    );
+                    document.getElementById(`P${index}`).textContent = `${(score[index] / fullscore * 100).toFixed(2)}%`;
                 });
-                alert(charname[score.indexOf(Math.max(...score))]);
+                
+                const alphachoice = [];
+                yourchoice.forEach(nowchoice => alphachoice.push(Alphabet[nowchoice]));
+                choices.textContent = alphachoice.join(', ');
+                const copyscore = [...score];
+                [...score].sort((a, b) => b - a).slice(0, 3).forEach(a => {
+                    top3.push(copyscore.indexOf(a));
+                    copyscore[copyscore.indexOf(a)] = null;
+                });
+                top3.forEach((a, b) =>
+                    Object.assign(document.getElementById(`result${b + 1}`), {
+                        innerHTML : `结果${b + 1}<img src="${links[a]}" alt="${charnames[a]}的立绘">`,
+                        onclick   : setfinpa.bind(null, a)
+                    })
+                );
+                setfinpa(top3[0]);
                 getQbox("none");
                 finpa.style.display = "flex";
             }
@@ -1445,12 +1788,11 @@
             function disfinal() {
                 finpa.style.display = "none";
                 getQbox("flex");
-                score = [...scorepreset];
             }
             function shadowfac(updown) {
                 return Object.assign(document.createElement('div'), {
                     className : "shadowbox " + updown
-                })
+                });
             }
             function createsha(box) {
                 const shaup   = shadowfac( "up" );
@@ -1458,10 +1800,77 @@
                 box.prepend    ( shaup );
                 box.appendChild(shadown);
             }
+            function subm() {
+                yourchoice.length = 0;
+                try {
+                    format.textContent = "D好帅";
+                    yourchoice.push(...paste.value.split(/,\s*/).map(function(a, b) {
+                        a = Alphabet.indexOf(a);
+                        if (a === -1) throw new Error('黑蓝牛逼');
+                        if (Object.values(Que[b])[0][a - 1] === void 0) throw new Error('米米世界');
+                        return a;
+                    }));
+                    if (yourchoice.length !== Que.length) throw new Error('大雾有800米高的大几把')
+                    sta();
+                    getQbox("none");
+                    numberlet = Que.length;
+                    final();
+                } catch(e) {
+                    yourchoice.length      = 0;
+                    format.textContent     = "格式不正确";
+                    format.style.animation = "format 0.3s ease 1";
+                    format.addEventListener("animationend", () => format.style.animation = "none", { once: true });
+                }
+            }
+            function heilan() {
+                disfinal();
+                finback();
+                numberlet         = 1;
+                yourchoice.length = 0;
+            }
+            function share() {
+                justify.style.display = "flex";
+            }
+            const shadowabled = ["buttb15", "buttb16"];
+            let   shatest     = function() {
+                requestAnimationFrame(
+                    () => {
+                        const buttb = document.getElementById(`buttb${numberlet}`);
+                        if (maxtop > 0 && !buttb.querySelector('.shadowbox') && !shadowabled.includes(buttb.id)) {
+                            widow.shalet ++;
+                            shadowabled.push(buttb.id);
+                            createsha(buttb);
+                            const bboxup      = code => buttb.querySelector( '.up' ).style.visibility = code;
+                            const bboxdown    = code => buttb.querySelector('.down').style.visibility = code;
+                            buttb.addEventListener("scroll", function() {
+                                if (notwaiting) {
+                                    notwaiting = false;
+                                    requestAnimationFrame(
+                                        () => {
+                                            if (this.scrollTop < 1) {
+                                                bboxup  ("hidden" );
+                                            } else if (this.scrollTop > maxtop) {
+                                                bboxdown("hidden" );
+                                            } else {
+                                                bboxup  ("visible");
+                                                bboxdown("visible");
+                                            }
+                                            notwaiting = true;
+                                        }
+                                    );
+                                }
+                            }, { passive: true });
+                            bboxup("hidden");
+                        } else if (buttb.style.padding !== "0.8rem") {
+                            widow.shalet ++;
+                            buttb.style.padding = "0.8rem";
+                        }
+                    }
+                );
+            };
             blkjv  .style.display = "flex";
             backbox.style.display = "flex";
             finpa  .style.display = "none";
-            const buttboxes = [];
             for (let Qnum = 1; Qnum <= Que.length; Qnum ++) {
                 const Qnow    = Que[Qnum - 1];
                 const Qtitle  = Object.keys  (Qnow)[0];
@@ -1479,13 +1888,14 @@
                     value       : 0,
                     max         : Que.length
                 });
-                const present = Object.assign(document.createElement('p'), {
+                const percent = Object.assign(document.createElement('p'), {
                     innerHTML   : Math.round((Qnum - 1) / Que.length * 100) + "%"
                 });
                 const prob    = Object.assign(document.createElement('div'), {
                     className   : "probox"
                 });
                 const buttb   = Object.assign(document.createElement('div'), {
+                    id          : `buttb${Qnum}`,
                     className   : "buttbox"
                 });
                 const buttnum = Object.assign(document.createElement('span'), {
@@ -1493,11 +1903,10 @@
                     textContent : `所有选项：A - ${Alphabet[Answers.length]}`
                 });
                 Qb  .append(title,  prob  );
-                prob.append(prog , present);
+                prob.append(prog , percent);
                 let ans = 0;
                 for (const As of Answers) {
                     ans ++;
-                    const copyans  = ans;
                     const Alpha    = Object.assign(document.createElement('span'), {
                         textContent : `${Alphabet[ans]}.`
                     });
@@ -1506,47 +1915,50 @@
                         className   : "Qbutton",
                         id          : `Q${Qnum}_${ans}`,
                         innerHTML   : As,
-                        onclick     : event => next(copyans, event.currentTarget)
+                        onclick     : next.bind(null, ans)
                     });
                     buttb.append(Alpha, Question);
                 }
-                buttb.prepend(buttnum);
-                createsha(buttb);
-                buttboxes.push(buttb);
-                const bboxup      = code => buttb.querySelector( '.up' ).style.visibility = code;
-                const bboxdown    = code => buttb.querySelector('.down').style.visibility = code;
-                window.notwaiting = true;
-                buttb .addEventListener("scroll", function scrollingwood() {
-                    if (notwaiting) {
-                        notwaiting = false;
-                        requestAnimationFrame(
-                            () => {
-                                if (this.scrollTop < 1) {
-                                    bboxup  ("hidden" );
-                                } else if (this.scrollTop > maxtop) {
-                                    bboxdown("hidden" );
-                                } else {
-                                    bboxup  ("visible");
-                                    bboxdown("visible");
-                                }
-                                notwaiting = true;
-                            }
-                        );
-                    }
-                }, { passive: true });
-                Qb   .appendChild(buttb);
-                mdiv .prepend    ( Qb  );
+                buttb.prepend    (buttnum);
+                Qb   .appendChild( buttb );
+                mdiv .prepend    (  Qb   );
             }
-            if (/(iPhone|iPad|iPod|Macintosh)/i.test(navigator.userAgent)) {
-                //检测到安卓玩家直接坠机
-                mdiv.querySelectorAll('p, h1, h2, span').forEach(a => a.classList.add('webkitstroke'));
+            charnames.forEach((character, code) => {
+                const newtr  = document.createElement('tr');
+                const newtd1 = Object.assign(document.createElement('td'), {
+                    textContent : character
+                });
+                const newtd2 = Object.assign(document.createElement('td'), {
+                    id          : `S${code}`
+                });
+                const newtd3 = Object.assign(document.createElement('td'), {
+                    id          : `P${code}`
+                });
+                newtr  .append     (newtd1, newtd2, newtd3);
+                sctable.appendChild(newtr                 );
+            });
+            async function android() {
+                const ios = /iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent);
+                if (!ios) return true;
+                const uad = navigator.userAgentData;
+                if (!uad) return false;
+                try {
+                    const type = await uad.getHighEntropyValues(['platform']);
+                    return type?.platform === "Android";
+                } catch (e) {
+                    return true;
+                }
             }
-            //可读性很差，你知道吗？😱把想要选中的第一个类型传进slct，函数会给它加上动画视奸器，动画视奸器触发之后，对slct2选中的所有元素执行func。你知道吗？
-            //h1在网页刚加载时就处于running状态，你知道吗？
-            const bjlisnr = (slct, slct2, func) => document.querySelector('#blkjvnb ' + slct).addEventListener('animationend', () => document.querySelectorAll('#blkjvnb ' + slct2).forEach(func), { once: true });
-            bjlisnr(  'h1'  ,               'p'                , a => a.style.animationPlayState = "running");
-            bjlisnr(  'p'   ,             'button'             , b => b.style.animationPlayState = "running");
-            bjlisnr('button', 'p, #blkjvnb h1, #blkjvnb button', c => c.style.animation          = "none"   );
+            (async () => {
+                const Android = await android();
+                if (!Android) {
+                    //检测到安卓玩家直接坠机
+                    mdiv.querySelectorAll('p, h1, h2, h3, span, caption, label, button:not(#switch)').forEach(a => a.classList.add('webkitstroke'));
+                } else {
+                    document.getElementById('highlite').style.textShadow = "-0.04em -0.04em var(--majorstroke), 0.04em -0.04em var(--majorstroke), -0.04em 0.04em var(--majorstroke), 0.04em 0.04em var(--majorstroke), -0.04em 0em var(--majorstroke), 0em 0.04em var(--majorstroke), 0.04em 0em var(--majorstroke), 0em -0.04em var(--majorstroke), 0 0 3px var(--minorshade)";
+                }
+            })();
+            //bjlisnr你毕业了🧑‍🎓
         </script>
     </body>
 </html>
