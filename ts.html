@@ -172,7 +172,8 @@
             #maindiv table {
                 border-collapse       : collapse;
                 background-color      : var(--majorstroke);
-                width                 : 60%;
+                width                 : 90%;
+                max-width             : 35rem;
                 margin                : 1rem;
                 & :is(th, td) {
                     border            : 2px ridge var(--minorcolor);
@@ -233,6 +234,7 @@
                 align-items           : center;
                 padding               : 0 0.5rem;
                 width                 : 30rem;
+                max-width             : 95vw;
                 height                : auto;
                 background            : linear-gradient(180deg, var(--minorshade) -100%, var(--majorstroke) 30%);
                 outline               : thin dashed var(--majorstroke);
@@ -765,8 +767,8 @@
                 BV1az4y1t7t1
             </p>
         </noscript>
-        <script src="https://cdn.staticfile.org/eruda/2.11.2/eruda.min.js"></script>
-        <script>eruda.init();</script>
+        <!--<script src="https://cdn.staticfile.org/eruda/2.11.2/eruda.min.js"></script>
+        <script>eruda.init();</script>-->
         <script>
             "use strict";
             const Que = 
@@ -1543,8 +1545,8 @@
                 "https://s1.imagehub.cc/images/2026/11/16/21559d93e43d25be177c94961361c774.jpeg",
                 "https://s1.imagehub.cc/images/2026/11/16/1a42855b017d917aa76846f9a43cc7bf.jpeg",
                 "https://s1.imagehub.cc/images/2026/11/16/337a4662084c4e795468864b846c5e11.jpeg",
-                "https://s1.imagehub.cc/images/2026/11/17/a30922857b977f28ea41a1236223664c.jpeg",
                 "https://s1.imagehub.cc/images/2026/11/16/170a1e3fdc96d956425ec0818b988c0b.jpeg",
+                "https://s1.imagehub.cc/images/2026/11/17/a30922857b977f28ea41a1236223664c.jpeg",
                 "https://s1.imagehub.cc/images/2026/11/17/02c8971b658f3c9639673696fe0adf6c.jpeg",
                 "https://s1.imagehub.cc/images/2026/11/16/43a586410eca7cbd239a811c26d95a98.jpeg",
                 "https://s1.imagehub.cc/images/2026/11/16/f517cd2731f6f4f731f24dc56bfd1555.jpeg",
@@ -1756,7 +1758,7 @@
                     let fullscore = 0;
                     //计分数组不为空则fullscore+1
                     nowchar.forEach(nowQ =>
-                        nowQ !== [] && fullscore ++
+                        nowQ.length === 0 || fullscore ++
                     );
                     document.getElementById(`P${index}`).textContent = `${(score[index] / fullscore * 100).toFixed(2)}%`;
                 });
