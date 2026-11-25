@@ -590,7 +590,7 @@
                 --minorshade          : #17b9;
                 --majorstroke         : #000024;
                 --glass               : #22224840;
-                --tips                : #359;
+                --tips                : #5ac;
             }
             [data-theme =  "day" ] {
                 --majorcolor          : #f8fdfdc9;
@@ -598,7 +598,7 @@
                 --minorshade          : #4bf9;
                 --majorstroke         : #f8fdfd;
                 --glass               : #fbfefe40;
-                --tips                : #48b;
+                --tips                : #58b;
             }
             @property --majorcolor {
                 syntax                : "<color>";
@@ -767,7 +767,7 @@
                 BV1az4y1t7t1
             </p>
         </noscript>
-        <!--<script src="https://cdn.staticfile.org/eruda/2.11.2/eruda.min.js"></script>
+        <!--><script src="https://cdn.staticfile.org/eruda/2.11.2/eruda.min.js"></script>
         <script>eruda.init();</script>-->
         <script>
             "use strict";
@@ -1626,6 +1626,7 @@
             const nowQelem    =  ()  => document  .getElementById(nowQbox());
             const theme       =  ()  => htmlobj   .dataset.theme;
             const eachprog    = code => nowQelem().querySelectorAll('.Qremain').forEach(code);
+            const eachbutt    = code => nowQelem().querySelectorAll( 'button' ).forEach(code);
             const widow       = { shalet: 0 };
             widow.Qeachtext   = function(code) {mdiv.querySelectorAll(`#${nowQbox()} :is(h2, span, p:not(nav p))`).forEach(code);};
             widow.Beachtext   = function(code) {mdiv.querySelectorAll(     '#blkjvnb :is(h1, p:not(nav p))'      ).forEach(code);};
@@ -1696,6 +1697,10 @@
             }
             //这个valanima不是ai写的。😭你们怎么都说。这是ai的？这是我一步步，从分段判断，while，改成二分之一，递归。的。😭😖😫🧨💥
             function next(ans) {
+                eachbutt(a =>
+                    a.style.backgroundColor = "var(--glass)"
+                );
+                this.style.backgroundColor = "var(--minorshade)";
                 getQbox("none");
                 yourchoice.push(ans);
                 //永远怀念 litebtn 动画（因为贼机儿麻烦和性能太烂被删除）
@@ -1912,13 +1917,13 @@
                     const Alpha    = Object.assign(document.createElement('span'), {
                         textContent : `${Alphabet[ans]}.`
                     });
-                    const Question = Object.assign(document.createElement('button'), {
+                    const Question = (que => Object.assign(que, {
                         type        : "button",
                         className   : "Qbutton",
                         id          : `Q${Qnum}_${ans}`,
                         innerHTML   : As,
-                        onclick     : next.bind(null, ans)
-                    });
+                        onclick     : next.bind(que, ans)
+                    }))(document.createElement('button'));
                     buttb.append(Alpha, Question);
                 }
                 buttb.prepend    (buttnum);
