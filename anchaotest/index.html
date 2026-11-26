@@ -87,7 +87,7 @@
             #maindiv label {
                 color                 : var(--tips);
             }
-            /*#maindiv h1, #maindiv h2, #maindiv h3, */#maindiv p:not(nav), /*#maindiv span, */#maindiv button:not(#switch), #maindiv caption, #maindiv label {
+            #maindiv h1, #maindiv h2, #maindiv h3, #maindiv p:not(nav), #maindiv span, #maindiv button:not(#switch), #maindiv caption, #maindiv label {
                 text-shadow           : 
                     -0.04em -0.04em var(--majorstroke),
                      0.04em -0.04em var(--majorstroke),
@@ -300,14 +300,15 @@
                 width                 : 100%;
                 margin                : 0;
             }
-            #blkjvnb, #finpage {
+            #blkjvnb, #finpage { 
                 height                : auto;
-                min-height            : 35rem;
+                min-height            : 80vh;
                 padding               : 2rem;
             }
             .Qbox {
-                height                : 35rem;
+                height                : 80vh;
                 min-height            : 0;
+                flex-grow             : 1;
             }
             #switbox, #choosebox {
                 outline               : thin dashed var(--majorstroke);
@@ -680,7 +681,7 @@
     </head>
     <!-- 我上厕所从来不冲水！哦不冲水，我上厕所从来不用纸！不用纸 -->
     <body>
-        <div><div id="maindiv">
+        <div id="maindiv">
             <button type="button" id="switch" onclick="swi()">☀️</button>
             <div id="beforebox"></div>
             <main id="blkjvnb">
@@ -745,7 +746,8 @@
                 <p id="tip">这里本来应该是一个回退按钮，但是由于你还没答题，所以这里啥也没有。</p>
                 <button type="button" id="goback" onclick="goback()" tabindex="0">我的妈点错了。</button>
             </nav>
-        </div><footer id="foter"><p>D很帅你知道吗？</p></footer></div>
+        </div>
+        <footer id="foter"><p>D很帅你知道吗？</p></footer>
         <div id="adbox">
             <article id="ad">
                 <a href="https://jiba1145141919.github.io/MyDSoBig/Dpictures.html" target="_blank" title="❤️🔞点我查看D美图🔞❤️" onclick="return confirm('你确定要查看D的美图吗？请注意，如果被帅炸，作者概不负责！')">
