@@ -302,11 +302,11 @@
             }
             #blkjvnb, #finpage {
                 height                : auto;
-                min-height            : 23rem;
+                min-height            : 30rem;
                 padding               : 2rem;
             }
             .Qbox {
-                height                : 23rem;
+                height                : 30rem;
                 min-height            : 0;
             }
             #switbox, #choosebox {
@@ -1874,7 +1874,7 @@
                 requestAnimationFrame(
                     () => {
                         const buttb = document.getElementById(`buttb${numberlet}`);
-                        if (maxtop > 0 && !buttb.querySelector('.shadowbox') && !shadowabled.includes(buttb.id)) {
+                        if (maxtop > 1 && !buttb.querySelector('.shadowbox') && !shadowabled.includes(buttb.id)) {
                             widow.shalet ++;
                             shadowabled.push(buttb.id);
                             createsha(buttb);
