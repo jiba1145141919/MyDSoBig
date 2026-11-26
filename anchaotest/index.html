@@ -18,7 +18,7 @@
             }
             html {
                 transition            : --majorcolor 0.5s ease-out, --minorcolor 0.5s ease-out, --minorshade 0.5s ease-out, --majorstroke 0.5s ease-out, --glass 0.5s ease-out;
-                background            : #678;
+                background            : linear-gradient(to bottom, #678 80%, var(--minorshade));
             }
             h1, h2, h3, p, label, span, button, header, footer, section, article, img, nav, main, div, progress {
                 box-sizing            : border-box;
@@ -87,7 +87,7 @@
             #maindiv label {
                 color                 : var(--tips);
             }
-            #maindiv h1, #maindiv h2, #maindiv h3, #maindiv p:not(nav), #maindiv span, #maindiv button:not(#switch), #maindiv caption, #maindiv label {
+            /*#maindiv h1, #maindiv h2, #maindiv h3, */#maindiv p:not(nav), /*#maindiv span, */#maindiv button:not(#switch), #maindiv caption, #maindiv label {
                 text-shadow           : 
                     -0.04em -0.04em var(--majorstroke),
                      0.04em -0.04em var(--majorstroke),
@@ -101,7 +101,8 @@
             @supports ((paint-order: stroke fill) and (-webkit-text-stroke: 1px #000)) {
                 .webkitstroke {
                     text-shadow         : none !important;
-                    -webkit-text-stroke : 0.15rem var(--majorstroke);
+                    /* stroke 0.15 rem  0.1em 0.05em*/
+                    -webkit-text-stroke : 0.1em var(--majorstroke);
                     paint-order         : stroke fill;
                 }
             }
@@ -275,9 +276,9 @@
                 min-width             : clamp(9rem, 25vw, 31rem);
                 aspect-ratio          : 4 / 1;
             }
-            #highlite {
+            /*#highlite {
                 text-shadow           : 0 0 3px var(--minorshade);
-            }
+            }*/
             #switch {
                 color                 : transparent;
                 position              : absolute;
@@ -418,7 +419,7 @@
                 align-items           : center;
                 background-color      : var(--majorstroke);
                 border-radius         : 10px;
-                border                : 1px solid var(--minorcolor);
+                border                : 5px solid var(--minorshade);
                 padding               : 1rem;
             }
             #adbox h4, #adbox h3, #adbox span {
@@ -443,6 +444,35 @@
                 height                : 100%;
                 width                 : 100%;
                 color                 : var(--minorcolor);
+            }
+            #copyright {
+                display               : flex;
+                flex-direction        : column;
+                justify-content       : flex-start;
+                align-items           : center;
+                width                 : 100%;
+                height                : 5rem;
+                padding               : 1rem;
+            }
+            noscript h2, noscript p, #copyright span {
+                display               : inline-flex;
+                flex-direction        : column;
+                justify-content       : center;
+                align-items           : center;
+                color                 : #fff;
+                &:is(h2) {
+                    font-size         : 1.5rem;
+                    font-weight       : bold;
+                }
+                &:is(p, span) {
+                    font-size         : 1rem;
+                    &:is(p) {
+                        font-weight   : normal;
+                    }
+                    &:is(span) {
+                        font-weight   : bold;
+                    }
+                }
             }
             #textbox {
                 display               : flex;
@@ -650,7 +680,7 @@
     </head>
     <!-- 我上厕所从来不冲水！哦不冲水，我上厕所从来不用纸！不用纸 -->
     <body>
-        <div id="maindiv">
+        <div><div id="maindiv">
             <button type="button" id="switch" onclick="swi()">☀️</button>
             <div id="beforebox"></div>
             <main id="blkjvnb">
@@ -715,7 +745,7 @@
                 <p id="tip">这里本来应该是一个回退按钮，但是由于你还没答题，所以这里啥也没有。</p>
                 <button type="button" id="goback" onclick="goback()" tabindex="0">我的妈点错了。</button>
             </nav>
-        </div>
+        </div><footer id="foter"><p>D很帅你知道吗？</p></footer></div>
         <div id="adbox">
             <article id="ad">
                 <a href="https://jiba1145141919.github.io/MyDSoBig/Dpictures.html" target="_blank" title="❤️🔞点我查看D美图🔞❤️" onclick="return confirm('你确定要查看D的美图吗？请注意，如果被帅炸，作者概不负责！')">
@@ -728,9 +758,9 @@
                 </a>
             </article>
         </div>
-        <footer id="foter"><p>D很帅你知道吗？</p></footer>
+        <footer id="copyright"><span>Based on SPRUNKI from sprunki.com</span></footer>
         <noscript>
-            <h1>我操了老铁们，你说这扯不扯，村里孩子吃上花生米了，这AA12到嘴火药味飘 是崩的脑瓜子直蹦高啊，五脏六腑到处跑 法医来了到处找</h1>
+            <h2>我操了老铁们，你说这扯不扯，村里孩子吃上花生米了，这AA12到嘴火药味飘 是崩的脑瓜子直蹦高啊，五脏六腑到处跑 法医来了到处找</h2>
             <p>
                 有一个浏览器前来运行html。
                 javascript：生异形啊你们哥，哥俩，啊。
@@ -1622,6 +1652,7 @@
             const sharetext   = document.getElementById('sharetext' );
             const justify     = document.getElementById( 'justify'  );
             const copyla      = document.getElementById(  'copyla'  );
+            const highlite    = document.getElementById( 'highlite' );
             const htmlobj     = document.documentElement;
             const nowQelem    =  ()  => document  .getElementById(nowQbox());
             const theme       =  ()  => htmlobj   .dataset.theme;
@@ -1960,9 +1991,10 @@
                 const Android = await android();
                 if (!Android) {
                     //检测到安卓玩家直接坠机
-                    mdiv.querySelectorAll('p, h1, h2, h3, span, caption, label, button:not(#switch)').forEach(a => a.classList.add('webkitstroke'));
+                    mdiv.querySelectorAll(':is(p, h1, h2, h3, span, caption, label, button):not(#switch, nav *)').forEach(a => a.classList.add('webkitstroke'));
+                    highlite.style.textShadow = "0 0 0.1em var(--minorshade)";
                 } else {
-                    document.getElementById('highlite').style.textShadow = "-0.04em -0.04em var(--majorstroke), 0.04em -0.04em var(--majorstroke), -0.04em 0.04em var(--majorstroke), 0.04em 0.04em var(--majorstroke), -0.04em 0em var(--majorstroke), 0em 0.04em var(--majorstroke), 0.04em 0em var(--majorstroke), 0em -0.04em var(--majorstroke), 0 0 3px var(--minorshade)";
+                    highlite.style.textShadow = `${getComputedStyle(highlite).textShadow}${', 0 0 0.2em var(--minorshade)'.repeat(4)}`;
                 }
             })();
             //bjlisnr你毕业了🧑‍🎓
