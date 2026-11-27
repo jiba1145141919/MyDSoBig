@@ -1704,6 +1704,7 @@
             //血的教训😭
             const gettop  =  ()  => getBbox ().scrollHeight - getBbox().clientHeight - 1;
             let   maxtop;
+            htmlobj.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day';
             function setfinpa(charcode) {
                 charn    .textContent = charnames[charcode];
                 fincribe .textContent = intro    [charcode];
