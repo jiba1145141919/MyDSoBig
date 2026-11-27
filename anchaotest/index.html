@@ -1885,7 +1885,7 @@
                         const buttb = document.getElementById(`buttb${numberlet}`);
                         if (!shadowabled.includes(buttb.id)) {
                             shadowabled.push(buttb.id);
-                            if (maxtop > 1) {
+                            if (maxtop > -1) {
                                 createsha(buttb);
                                 const bboxup      = code => buttb.querySelector( '.up' ).style.visibility = code;
                                 const bboxdown    = code => buttb.querySelector('.down').style.visibility = code;
