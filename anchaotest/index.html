@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="day">
+<html lang="zh-CN">
     <head>
         <meta charset="utf-8">
         <meta name="description" content="全网首个黯巢au测试！点击即测，立刻看看你是哪个黯巢sprunki！Norby_C团队精心打造匠心制作 这个测试超级帅，把我的裤子都帅炸了！好准呀你也快来试试吧iywc iywc嘻嘻哈哈嘻嘻哈哈。眼前这个秃顶老汉子，因为去漫展在签名墙上画家产被骂小鬼别叫，他竟然想要搞破坏，啊哈哈😭😭😭人家是萌萌产品妹🤩黑蓝嘟嘟萌😙长得跟个小鬼似的😌你是个屁呀你是😡你也买个镜子照一照你自己吧🤪啊？👿你被骂小鬼，那是因为，你搞死放屁🤣为什么这么说我呀💔我要，搞破坏😭我要😡破坏！！！😈😈啊啊啊啊啊啊💥💥">
@@ -621,6 +621,26 @@
                 80%  { transform: translateX(-0.1rem); }
                 100% {                                 }
             }
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --majorcolor      : #000024c9;
+                    --minorcolor      : #8df;
+                    --minorshade      : #17b9;
+                    --majorstroke     : #000024;
+                    --glass           : #22224840;
+                    --tips            : #5ac;
+                }
+            }
+            @media (prefers-color-scheme: light) {
+                :root {
+                    --majorcolor      : #f8fdfdc9;
+                    --minorcolor      : #06a;
+                    --minorshade      : #4bf9;
+                    --majorstroke     : #f8fdfd;
+                    --glass           : #fbfefe40;
+                    --tips            : #58b;
+                }
+            }
             /*这是我试出来的颜色不是ai给的❤️*/
             [data-theme = "night"] {
                 /*major 透明度c0 d0❌*/
@@ -807,7 +827,7 @@
                 BV1az4y1t7t1
             </p>
         </noscript>
-        <!--<script src="https://cdn.staticfile.org/eruda/2.11.2/eruda.min.js"></script>
+        <!--><script src="https://cdn.staticfile.org/eruda/2.11.2/eruda.min.js"></script>
         <script>eruda.init();</script>-->
         <script>
             "use strict";
@@ -1704,7 +1724,20 @@
             //血的教训😭
             const gettop  =  ()  => getBbox ().scrollHeight - getBbox().clientHeight - 1;
             let   maxtop;
-            htmlobj.dataset.theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day';
+            const darktf = window.matchMedia('(prefers-color-scheme: dark)');
+            function windowtheme() {
+                htmlobj.dataset.theme = darktf.matches? 
+                    (
+                        swit("🌙"),
+                        'night'
+                    ) :
+                    (
+                        swit("☀️"),
+                        'day'
+                    );
+            }
+            windowtheme();
+            darktf.addEventListener("change", windowtheme);
             function setfinpa(charcode) {
                 charn    .textContent = charnames[charcode];
                 fincribe .textContent = intro    [charcode];
