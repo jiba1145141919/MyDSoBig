@@ -807,7 +807,7 @@
                 BV1az4y1t7t1
             </p>
         </noscript>
-        <!--<script src="https://cdn.staticfile.org/eruda/2.11.2/eruda.min.js"></script>
+        <!--><script src="https://cdn.staticfile.org/eruda/2.11.2/eruda.min.js"></script>
         <script>eruda.init();</script>-->
         <script>
             "use strict";
@@ -1668,7 +1668,7 @@
             const theme       =  ()  => htmlobj   .dataset.theme;
             const eachprog    = code => nowQelem().querySelectorAll('.Qremain').forEach(code);
             const eachbutt    = code => nowQelem().querySelectorAll( 'button' ).forEach(code);
-            const widow       = { shalet: 0 };
+            const widow       = { notwaiting : true };
             widow.Qeachtext   = function(code) {mdiv.querySelectorAll(`#${nowQbox()} :is(h2, span, p:not(nav p))`).forEach(code);};
             widow.Beachtext   = function(code) {mdiv.querySelectorAll(     '#blkjvnb :is(h1, p:not(nav p))'      ).forEach(code);};
             widow.Feachtext   = function(code) {mdiv.querySelectorAll(     '#finpage :is(h2, p:not(nav p))'      ).forEach(code);};
@@ -1704,7 +1704,6 @@
             //血的教训😭
             const gettop  =  ()  => getBbox ().scrollHeight - getBbox().clientHeight - 1;
             let   maxtop;
-            window.notwaiting = true;
             function setfinpa(charcode) {
                 charn    .textContent = charnames[charcode];
                 fincribe .textContent = intro    [charcode];
@@ -1746,7 +1745,7 @@
                 yourchoice.push(ans);
                 //永远怀念 litebtn 动画（因为贼机儿麻烦和性能太烂被删除）
                 if (numberlet >= Que.length) {
-                    if (widow.shalet >= Que.length) shatest = () => {};
+                    if (shadowabled.length >= Que.length) shatest = () => {};
                     final();
                 } else {
                     numberlet ++;
@@ -1884,34 +1883,34 @@
                 requestAnimationFrame(
                     () => {
                         const buttb = document.getElementById(`buttb${numberlet}`);
-                        if (maxtop > 1 && !buttb.querySelector('.shadowbox') && !shadowabled.includes(buttb.id)) {
-                            widow.shalet ++;
+                        if (!shadowabled.includes(buttb.id)) {
                             shadowabled.push(buttb.id);
-                            createsha(buttb);
-                            const bboxup      = code => buttb.querySelector( '.up' ).style.visibility = code;
-                            const bboxdown    = code => buttb.querySelector('.down').style.visibility = code;
-                            buttb.addEventListener("scroll", function() {
-                                if (notwaiting) {
-                                    notwaiting = false;
-                                    requestAnimationFrame(
-                                        () => {
-                                            if (this.scrollTop < 1) {
-                                                bboxup  ("hidden" );
-                                            } else if (this.scrollTop > maxtop) {
-                                                bboxdown("hidden" );
-                                            } else {
-                                                bboxup  ("visible");
-                                                bboxdown("visible");
+                            if (maxtop > 1) {
+                                createsha(buttb);
+                                const bboxup      = code => buttb.querySelector( '.up' ).style.visibility = code;
+                                const bboxdown    = code => buttb.querySelector('.down').style.visibility = code;
+                                buttb.addEventListener("scroll", function() {
+                                    if (widow.notwaiting) {
+                                        widow.notwaiting = false;
+                                        requestAnimationFrame(
+                                            () => {
+                                                if (this.scrollTop < 1) {
+                                                    bboxup  ("hidden" );
+                                                } else if (this.scrollTop > maxtop) {
+                                                    bboxdown("hidden" );
+                                                } else {
+                                                    bboxup  ("visible");
+                                                    bboxdown("visible");
+                                                }
+                                                widow.notwaiting = true;
                                             }
-                                            notwaiting = true;
-                                        }
-                                    );
-                                }
-                            }, { passive: true });
-                            bboxup("hidden");
-                        } else if (buttb.style.padding !== "0.8rem") {
-                            widow.shalet ++;
-                            buttb.style.padding = "0.8rem";
+                                        );
+                                    }
+                                }, { passive: true });
+                                bboxup("hidden");
+                            } else {
+                                buttb.style.padding = "0.8rem";
+                            }
                         }
                     }
                 );
