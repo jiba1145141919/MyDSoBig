@@ -851,7 +851,7 @@
                 BV1az4y1t7t1
             </p>
         </noscript>
-        <!--<script src="https://cdn.staticfile.org/eruda/2.11.2/eruda.min.js"></script>
+        <!--><script src="https://cdn.staticfile.org/eruda/2.11.2/eruda.min.js"></script>
         <script>eruda.init();</script>-->
         <script>
             "use strict";
@@ -1940,8 +1940,8 @@
                     () => {
                         const buttb = document.getElementById(`buttb${numberlet}`);
                         if (!shadowabled.includes(buttb.id)) {
-                            shadowabled.push(buttb.id);
                             if (maxtop > 0) {
+                                shadowabled.push(buttb.id);
                                 createsha(buttb);
                                 const bboxup      = code => buttb.querySelector( '.up' ).style.visibility = code;
                                 const bboxdown    = code => buttb.querySelector('.down').style.visibility = code;
@@ -1964,9 +1964,10 @@
                                     }
                                 }, { passive: true });
                                 bboxup("hidden");
-                            } else {
+                            } else if (buttb.style.padding !== "0.8rem") {
                                 buttb.style.padding = "0.8rem";
-                            }
+                                shatest();
+                            } else shadowabled.push(buttb.id);
                         }
                     }
                 );
