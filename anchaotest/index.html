@@ -350,21 +350,21 @@
                 padding               : 0.5rem;
                 height                : 100%;
                 font-size             : 1.8rem !important;
-                & img {
-                    height            : 100%;
-                    aspect-ratio      : 1 / 1;
-                    object-fit        : cover;
-                    object-position   : center;
-                    border-radius     : 5px;
-                    margin            : 0;
-                    border            : thin dotted var(--minorshade);
-                    &:is(#switbox img) {
-                        margin-left   : auto;
-                    }
-                    &:is(#choosebox img) {
-                        margin-right  : auto;
-                    }
-                }
+            }
+            :is(#result1, #result2, #result3, #finalback, #share) img {
+                height            : 100% !important;
+                aspect-ratio      : 1 / 1;
+                object-fit        : cover;
+                object-position   : center;
+                border-radius     : 5px;
+                margin            : 0;
+                border            : thin dotted var(--minorshade);
+            }
+            #switbox img {
+                margin-left   : auto;
+            }
+            #choosebox img {
+                margin-right  : auto;
             }
             #choices {
                 margin                : 0.5rem;
@@ -851,7 +851,7 @@
                 BV1az4y1t7t1
             </p>
         </noscript>
-        <!--><script src="https://cdn.staticfile.org/eruda/2.11.2/eruda.min.js"></script>
+        <!--<script src="https://cdn.staticfile.org/eruda/2.11.2/eruda.min.js"></script>
         <script>eruda.init();</script>-->
         <script>
             "use strict";
